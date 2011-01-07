@@ -7,6 +7,7 @@ AM_INIT_AUTOMAKE([tar-pax])
 AC_OUTPUT([
 Makefile
 emacs/Makefile
+git/Makefile
 zsh/Makefile
 ])
 

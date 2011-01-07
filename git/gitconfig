@@ -1,0 +1,8 @@
+[user]
+    email = chris@cheetham.com
+    name = Chris Cheetham
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
