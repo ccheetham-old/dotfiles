@@ -1,1 +1,1 @@
-SUBDIRS = zsh
+SUBDIRS = emacs zsh
