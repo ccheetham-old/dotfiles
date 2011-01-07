@@ -1,6 +1,6 @@
 AC_INIT([myenv], [0.0.1])
 
-AC_MSG_NOTICE([version... $VERSION])
+AC_PREFIX_DEFAULT(${HOME})
 
 AM_INIT_AUTOMAKE([tar-pax])
 
