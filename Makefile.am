@@ -1,1 +1,1 @@
-SUBDIRS = emacs git zsh
+SUBDIRS = emacs git zsh xorg
