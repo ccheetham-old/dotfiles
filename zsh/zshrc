@@ -34,3 +34,5 @@ precmd () {
 }
 
 PS1='${vcs_info_msg_0_}%f%# '
+
+source ~/.me/aliases

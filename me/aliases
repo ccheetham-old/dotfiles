@@ -1,0 +1,158 @@
+# -*- sh -*-
+
+
+alias upalias='. ~/.me/aliases'
+
+
+#
+# superuser
+#
+
+[[ $OSTYPE == solaris* ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
+alias toor='$ROOTEXEC su -'
+
+
+#
+# system
+#
+
+alias reboot='$ROOTEXEC reboot'
+alias poweroff='$ROOTEXEC poweroff'
+alias hosts='sudo vi /etc/hosts'
+
+alias eth0='ifconfig eth0'
+alias wlan0='ifconfig wlan0'
+alias e1000g0='ifconfig e1000g0'
+alias e1000g1='ifconfig e1000g1'
+
+[[ $OSTYPE == solaris* ]] && SYSLOG='/var/adm/messages' || SYSLOG='/var/log/messages'
+alias systail='tail -f $SYSLOG'
+
+
+#
+# shell
+#
+
+alias h='history -fD'
+alias path='echo $PATH'
+alias watch='watch -n1'
+
+
+#
+# files
+#
+
+alias ls='ls --classify --color --group-directories-first'
+alias ll='ls -l'
+alias lh='ll -h'
+alias la='ls -a'
+alias lla='ls -la'
+
+alias mkdir='mkdir -p'
+
+
+#
+# gentoo
+#
+
+alias em='sudo emerge -v'
+alias sysup='em --sync'
+
+
+#
+# suse
+#
+alias zy='sudo zypper'
+
+
+#
+# python
+#
+
+alias py='python'
+alias pypath='echo $PYTHONPATH'
+alias tw='twistd -n'
+
+
+#
+# subversion
+#
+
+alias sg='svn checkout'
+alias si='svn info'
+alias s\?='svn status'
+alias sa='svn add'
+alias sp='svn update'
+alias sP='svn commit'
+alias sR='svn revert'
+alias sl='svn log --stop-on-copy'
+alias sls='svn ls'
+alias sc='svn cp'
+alias sD='svn remove'
+alias sL='sl -rCOMMITTED'
+function sd {
+    svn diff --diff-cmd colordiff $* | less
+}
+
+
+#
+# git
+#
+
+alias g='git'
+alias gd='git diff'
+alias g\?='git status'
+alias ga='git add'
+alias gp='git svn rebase'
+alias gP='git svn dcommit'
+alias gc='git commit'
+alias gs='git stash'
+alias gR='git checkout -f'
+alias gD='git rm'
+
+
+#
+# java
+#
+
+alias ant='ant -e'
+alias m='mvn'
+alias mdoc='mvn javadoc:javadoc'
+
+
+#
+# misc apps
+#
+
+alias mutt='TERM=rxvt-256color mutt -d2'
+alias f='ncftp'
+alias x='startx'
+
+
+#
+# ssh
+#
+
+function instkey() {
+    if [[ $# != 1 ]]; then
+        echo "Usage: $0 <host>"
+        return
+    fi
+    local user_host=$1
+    echo initializing remote keystore directory
+    ssh $user_host mkdir -p .ssh
+    echo copying public key
+    scp ~/.ssh/id_dsa.pub ${user_host}:tmpkey
+    echo installing public key
+    ssh $user_host cat tmpkey '>>' .ssh/authorized_keys
+    echo cleaning up
+    ssh $user_host rm tmpkey
+}
+
+
+#
+# ncss
+#
+
+alias acn='cd $APCONN_HOME'
+alias sdk='cd $NCSSSDK_HOME'

@@ -8,6 +8,7 @@ AC_OUTPUT([
 Makefile
 emacs/Makefile
 git/Makefile
+me/Makefile
 zsh/Makefile
 xorg/Makefile
 ])
