@@ -9,8 +9,9 @@ Makefile
 emacs/Makefile
 git/Makefile
 me/Makefile
-zsh/Makefile
+vim/Makefile
 xorg/Makefile
+zsh/Makefile
 ])
 
 cat <<EOM
