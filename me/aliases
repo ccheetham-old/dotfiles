@@ -18,7 +18,7 @@ alias toor='$ROOTEXEC su -'
 
 alias reboot='$ROOTEXEC reboot'
 alias poweroff='$ROOTEXEC poweroff'
-alias hosts='sudo vi /etc/hosts'
+alias hosts='$ROOTEXEC vi /etc/hosts'
 
 alias eth0='ifconfig eth0'
 alias wlan0='ifconfig wlan0'
