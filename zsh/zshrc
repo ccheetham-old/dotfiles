@@ -35,4 +35,9 @@ precmd () {
 
 PS1='${vcs_info_msg_0_}%f%# '
 
+case $OSTYPE in
+    solaris*)
+        source ~/.me/profile-solaris
+        ;;
+esac
 source ~/.me/aliases
