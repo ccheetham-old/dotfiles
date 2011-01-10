@@ -156,3 +156,12 @@ function instkey() {
 
 alias acn='cd $APCONN_HOME'
 alias sdk='cd $NCSSSDK_HOME'
+
+
+#
+# favorites
+#
+
+alias genie='ssh cheetos@genie'
+alias indie='ssh cheetos@indie'
+alias fooware='ssh cheetham@www.fooware.com'
