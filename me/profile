@@ -1,0 +1,19 @@
+# -*- sh -*-
+
+case $OSTYPE in
+    linux*)
+        MY_OS=linux
+        ;;
+    solaris*)
+        MY_OS=solaris
+        ;;
+esac
+
+MY_ARCH=~/local/${MY_OS}-$(uname -m)
+MY_ARCH_OPT=$MY_ARCH/opt
+MY_NOARCH=~/local
+MY_NOARCH_OPT=$MY_NOARCH/opt
+
+source ~/.me/java
+source ~/.me/paths
+source ~/.me/aliases
