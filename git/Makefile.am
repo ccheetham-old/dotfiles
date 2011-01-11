@@ -8,7 +8,7 @@ install-exec-hook:
 			if [[ -L $$link ]]; then \
 				echo removing existing link to $$link; \
 				rm $$link; \
-			else; \
+			else \
 				echo backing up $$link; \
 				mv $$link $$link.backup; \
 			fi; \
