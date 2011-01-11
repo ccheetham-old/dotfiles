@@ -1,1 +1,1 @@
-SUBDIRS = emacs git me vim xorg zsh
+SUBDIRS = bin emacs git me vim xorg zsh

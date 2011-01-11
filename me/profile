@@ -9,10 +9,10 @@ case $OSTYPE in
         ;;
 esac
 
-MY_ARCH=~/local/${MY_OS}-$(uname -m)
-MY_ARCH_OPT=$MY_ARCH/opt
-MY_NOARCH=~/local
-MY_NOARCH_OPT=$MY_NOARCH/opt
+export MY_ARCH=~/local/${MY_OS}-$(uname -m)
+export MY_ARCH_OPT=$MY_ARCH/opt
+export MY_NOARCH=~/local
+export MY_NOARCH_OPT=$MY_NOARCH/opt
 
 source ~/.me/java
 source ~/.me/paths

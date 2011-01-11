@@ -6,6 +6,7 @@ AM_INIT_AUTOMAKE([tar-pax])
 
 AC_OUTPUT([
 Makefile
+bin/Makefile
 emacs/Makefile
 git/Makefile
 me/Makefile
