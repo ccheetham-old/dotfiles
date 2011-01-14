@@ -1,6 +1,6 @@
 xfiles = Xresources
 
-install-exec-hook:
+install-data-hook:
 	for f in $(xfiles); do \
 		link=$(prefix)/.$$f; \
 		target=`pwd`/$$f ; \

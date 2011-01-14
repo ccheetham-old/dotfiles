@@ -1,6 +1,6 @@
 mydir = me
 
-install-exec-hook:
+install-data-hook:
 	link=$(prefix)/.$(mydir); \
 	target=`pwd` ; \
 	if [[ -e $$link ]]; then \

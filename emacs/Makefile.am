@@ -1,6 +1,6 @@
 emacsdir = emacs.d
 
-install-exec-hook:
+install-data-hook:
 	link=$(prefix)/.$(emacsdir); \
 	target=`pwd`/$(emacsdir) ; \
 	if [[ -e $$link ]]; then \

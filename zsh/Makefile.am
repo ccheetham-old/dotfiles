@@ -1,6 +1,6 @@
 zshfiles = zshrc
 
-install-exec-hook:
+install-data-hook:
 	for f in $(zshfiles); do \
 		link=$(prefix)/.$$f; \
 		target=`pwd`/$$f ; \

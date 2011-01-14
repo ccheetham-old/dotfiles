@@ -1,6 +1,6 @@
 vimfiles = vim vimrc
 
-install-exec-hook:
+install-data-hook:
 	for f in $(vimfiles); do \
 		link=$(prefix)/.$$f; \
 		target=`pwd`/$$f ; \

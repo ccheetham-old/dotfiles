@@ -1,6 +1,6 @@
 gitfiles = gitconfig
 
-install-exec-hook:
+install-data-hook:
 	for f in $(gitfiles); do \
 		link=$(prefix)/.$$f; \
 		target=`pwd`/$$f ; \
