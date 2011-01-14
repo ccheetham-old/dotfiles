@@ -1,1 +1,1 @@
-bin_SCRIPTS = netbeans
+bin_SCRIPTS = netbeans vpn
