@@ -8,6 +8,7 @@ AC_OUTPUT([
 Makefile
 bin/Makefile
 emacs/Makefile
+fluxbox/Makefile
 git/Makefile
 me/Makefile
 vim/Makefile

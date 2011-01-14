@@ -1,0 +1,77 @@
+[begin] (cheetos)
+[encoding] {UTF-8}
+  [exec] (browser) {firefox}
+  [exec]   (term) {xterm}
+  [exec]   (root) {xterm -T "root" -e sudo su -}
+  [submenu] (apps)
+    [exec]   (alsamixer) {xterm -e alsamixer}
+    [exec]   (alsaplayer) {alsaplayer}
+    [exec]   (emacs) {emacs ~/workspace}
+    [exec]   (evince) {evince}
+    [exec]   (firefox) {firefox}
+    [exec]   (gimp) {gimp}
+    [exec]   (pidgin) {pidgin}
+    [exec]   (mutt) {xmutt}
+    [exec]   (netbeans) {netbeans}
+    [exec]   (vncviewer) {vncviewer}
+    [exec]   (vpn) {vpn}
+    [exec]   (wireshark) {wireshark}
+    [separator]
+    [exec]   (view doc...) {FILE=$(Xdialog --stdout --title "Select pdf, ps, tiff, or dvi" --fselect ~ 0 0) && evince-previewer $FILE}
+    [exec]   (view manpage...) {MANPAGE=$(Xdialog --stdout --title "Man Page" --inputbox "Enter man page" 0 0) && yelp man:$MANPAGE}
+  [end]
+  [submenu] (dev)
+    [exec]   (connd client) {xrestclient -u http://localhost:9980/ -e}
+    [exec]   (connd log) {xterm -name log -T "Connector Log" -e smarttail /tmp/ncss/var/log/connector/connector.log}
+    [exec]   (twistd log) {xterm -name log -T "Twisted Log" -e smarttail /tmp/ncss/var/log/connector/twistd.log}
+    [exec]   (twistd err) {xterm -name log -T "Twisted Errors" -e smarttail /tmp/ncss/var/log/connector/twistd.err}
+  [end]
+  [submenu] (office)
+    [exec]  (draw) {oodraw}
+    [exec]  (presentation) {ooimpress}
+    [exec]  (spreadhseet) {oocalc}
+    [exec]  (word processor) {oowriter}
+    [separator]
+    [exec]  (document) {soffice}
+    [separator]
+    [exec]  (database) {oobase}
+    [exec]  (math) {oomath}
+    [exec]  (print) {ooffice-printeradmin}
+  [end]
+  [submenu] (logs)
+    [exec]   (system) {xterm -name log -T "System Log" -e sudo tail -f /var/log/messages}
+    [exec]   (netbeans) {xterm -name log -T "NetBeans Log" -e tail -f ~/.netbeans/6.9/var/log/messages.log}
+  [end]
+  [separator]
+  [submenu] (desktop)
+    [exec] (screenshot) {import screenshot.png && display -title screenshot.png -resize 50% screenshot.png}
+    [exec] (xfontsel) {xfontsel}
+    [exec] (load .Xdefaults) {xrdb -merge $HOME/.Xdefaults}
+    [exec] (window name) {xprop WM_CLASS | cut -d \" -f 2|xmessage -file - -center}
+#    [separator]
+#    [exec] (lock) {xscreensaver-command -lock}
+    [submenu] (fluxbox)
+      [config] (configure)
+      [submenu] (styles)
+        [include] (/usr/share/fluxbox/menu.d/styles/)
+      [end]
+      [submenu] (tools)
+      [end]
+      [commanddialog] (Fluxbox Command)
+      [reconfig] (reload config)
+      [restart] (restart)
+      [exec] (about) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
+  [end]
+  [end]
+  [submenu] (system)
+    [exec]   (top) {xterm -T "Top" -e top}
+    [separator]
+    [exec]   (reboot) {sudo reboot}
+    [exec]   (poweroff) {sudo poweroff}
+    [exec]   (single user) {sudo init 1}
+  [end]
+  [workspaces] (workspace list)
+  [separator]
+  [exit] (exit)
+[endencoding]
+[end]
