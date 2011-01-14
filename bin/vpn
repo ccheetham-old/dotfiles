@@ -1,0 +1,16 @@
+#!/bin/sh
+
+CISCO_HOME=/opt/cisco/vpn/bin
+VPN_AGENT=vpnagentd
+VPN_GUI=vpnui
+
+if ! pgrep $VPN_AGENT > /dev/null; then
+    echo -n agent not running, starting...
+    $CISCO_HOME/$VPN_AGENT
+fi
+
+if ! pgrep -u $(id -u) vpnui > /dev/null ; then
+    echo -n starting vpn ui...
+    $CISCO_HOME/$VPN_GUI &
+    echo done
+fi
