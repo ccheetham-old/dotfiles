@@ -26,7 +26,7 @@ alias e1000g0='ifconfig e1000g0'
 alias e1000g1='ifconfig e1000g1'
 
 [[ $OSTYPE == solaris* ]] && SYSLOG='/var/adm/messages' || SYSLOG='/var/log/messages'
-alias systail='tail -f $SYSLOG'
+alias systail='$ROOTEXEC tail -f $SYSLOG'
 
 
 #
