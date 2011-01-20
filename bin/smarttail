@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+function usage() {
+    echo "usage: smarttail <file>"
+}
+
+FILE=$1
+if [[ -z $FILE ]]; then
+    usage
+    exit 1
+fi
+
+SLEEP=1
+while [[ ! -e $FILE ]]; do
+    #echo waiting $SLEEP seconds for file
+    sleep 1
+done
+
+tail -f $FILE
