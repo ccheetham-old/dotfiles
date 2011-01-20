@@ -1,0 +1,70 @@
+set realname="Chris Cheetham"
+set from="CCheetham@Novell.COM"
+set use_from=yes
+
+#set editor="emacsclient --tty --alternate-editor=vim %s"
+set editor="vim %s"
+set implicit_autoview
+
+#set ascii_chars
+#set mbox=+Read
+#set record=+Sent
+#set postponed=+Drafts
+
+set mbox_type=Maildir
+set folder=$HOME/var/mail
+set mbox=$HOME/var/mail
+set record=+.Sent
+set postponed=+.Drafts
+set spoolfile=$HOME/var/mail
+mailboxes `echo -n "+ "; find ~/var/mail -type d -name ".*" -printf "+'%f' "`
+macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+
+set sendmail="/usr/bin/msmtp"
+set envelope_from=yes
+
+set mail_check=10
+set timeout=10
+set sort=threads
+set beep_new
+set fast_reply
+set metoo
+set noconfirmappend
+set pager_stop
+set index_format="%Z %{%b %d}  %-10.10F  %s"
+set pager_index_lines=6
+
+lists css-connectors@lists.novell.com css-engineers@lists.novell.com css-dev-connector@forge.provo.novell.com css-build@lists.novell.com css-dev@novell.com
+subscribe css-connectors@lists.novell.com css-engineers@lists.novell.com css-dev-connector@forge.provo.novell.com css-build@lists.novell.com css-dev@novell.com
+
+#auto_view text/html
+
+ignore *
+unignore from date subject to cc bcc
+#unignore list-id
+unignore organization organisation
+#unignore x-mailer: x-newsreader: x-mailing-list:
+#unignore posted-to:
+unignore importance
+#unignore message-id references in-reply-to
+unignore content-length lines
+
+source ~/.mutt/aliases
+set alias_file=~/.mutt/aliases
+set header_cache="~/var/run/mutt_header.cache"
+#set maildir_cache="~/.mutt/maildir_cache"
+
+source ~/.mutt/cheetos.theme
+
+macro index,pager I "change-folder =novell\n"
+
+macro index y "<tag-pattern>~N|~O<enter><tag-prefix-cond><clear-flag>N<untag-pattern>~T<enter>"
+
+bind index,pager n next-unread
+bind index,pager p previous-unread
+bind index,pager j next-undeleted
+bind index,pager k previous-undeleted
+bind index,pager h next-page
+bind index,pager l previous-page

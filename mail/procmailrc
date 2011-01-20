@@ -1,0 +1,79 @@
+DEFAULT=$HOME/var/mail
+MAILDIR=$HOME/var/mail
+LOCKFILE=$HOME/var/run/procmail.lock
+LOGFILE=$HOME/var/log/procmail
+LOGABSTRACT=no
+#VERBOSE=on...is only used for debugging
+VERBOSE=on
+#FORMAIL=formail
+NL="
+"
+
+##recipe lines begin with :0
+##dont put comments on recipe lines
+##disable a recipe with the false condition !
+##condition lines begin with * and regex is your friend
+##conditions are anded and everything after * is fed straight into egrep
+##one action line follows the conditions, in this case it is a mailbox name
+
+#catch duplicates using formail
+:0 Whc: .msgid.lock
+| formail -D 16384 .msgid.cache
+
+:0 a
+.duplicates/
+
+#people we always allow mail from
+#:0
+#* ^From:.*(craig\@hotmail|renee\@local.com)
+#$MAILDIR/friends
+
+#now flush some spam out
+#:0
+#* ^Subject:.*(credit|cash|money|debt|sex|sale|loan)
+#$MAILDIR/spam
+
+#no more html messages
+#:0
+#* ^Content-Type:.*html
+#$MAILDIR/junk
+
+#now put my mail lists into mailboxes
+:0
+* ^List-Id:.*css-dev.forge.provo.novell.com
+.novell-css-vc/
+
+:0
+* ^List-Id:.*Cloud Security Services build notification mail list
+.novell-css-build/
+
+:0
+* ^List-Id:.*css-engineers.lists.novell.com
+.novell-css-engr/
+
+:0
+* ^List-Id:.*Discussions for Cloud Security Service connectors
+.novell-css-conn/
+
+:0
+* ^From: bugzilla_noreply@novell.com
+.novell-css-bug/
+
+# catch any other Novell mail
+:0
+* ^From:.*novell.com
+.novell/
+
+# the test folks in India
+:0
+* ^From:.*\@applabs.com
+.novell/
+
+
+################################
+# Last rule: mail that gets    #
+# this far goes in default box #
+################################
+:0
+* .*
+.default/

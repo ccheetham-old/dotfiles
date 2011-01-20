@@ -10,6 +10,7 @@ bin/Makefile
 emacs/Makefile
 fluxbox/Makefile
 git/Makefile
+mail/Makefile
 me/Makefile
 vim/Makefile
 xorg/Makefile
