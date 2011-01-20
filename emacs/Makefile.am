@@ -2,7 +2,7 @@ emacsdir = emacs.d
 
 install-data-hook:
 	link=$(prefix)/.$(emacsdir); \
-	target=`pwd`/$(emacsdir) ; \
+	target=`pwd` ; \
 	if [[ -e $$link ]]; then \
 		if [[ -L $$link ]]; then \
 			echo removing existing link to $$link; \
