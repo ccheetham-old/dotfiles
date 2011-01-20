@@ -29,12 +29,6 @@
                                         ; use 'y' in lieu of 'yes'
 (fset 'yes-or-no-p 'y-or-n-p)
 
-                                        ; buffer list -> eletric buffer list
-(global-set-key "\C-x\C-b" 'electric-buffer-list)
-
-                                        ; indent on ENTER
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
                                         ; display column number
 (setq column-number-mode t)
 
@@ -52,6 +46,15 @@
 ;; (add-hook 'adoc-mode-hook
 ;;           (lambda()
 ;;             (auto-fill-mode t)))
+
+                                        ; php
+
+(defun phplint-thisfile()
+  (interactive)
+  (compile (format "php -l %s" (buffer-file-name))))
+(add-hook 'php-mode-hook
+          '(lambda ()
+             (local-set-key [f8] 'phplint-thisfile)))
 
 
 (require 'color-theme)
@@ -122,6 +125,12 @@
      (text-cursor ((t (:background "yellow" :foreground "black"))))
      (underline ((nil (:underline nil)))))))
 (color-theme-cheetos)
+
+                                        ; key bindings
+(global-set-key (kbd "C-x C-b") 'electric-buffer-list)
+(global-set-key (kbd "C-.") 'next-error)
+(global-set-key (kbd "C-,") 'previous-error)
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
