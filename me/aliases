@@ -20,6 +20,7 @@ alias reboot='$ROOTEXEC reboot'
 alias poweroff='$ROOTEXEC poweroff'
 alias hosts='$ROOTEXEC vi /etc/hosts'
 
+alias ifconfig='/sbin/ifconfig'
 alias eth0='ifconfig eth0'
 alias wlan0='ifconfig wlan0'
 alias e1000g0='ifconfig e1000g0'
