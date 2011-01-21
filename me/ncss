@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+export NCSS_HOME=/tmp/ncss

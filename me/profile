@@ -15,5 +15,6 @@ export MY_NOARCH=~/local
 export MY_NOARCH_OPT=$MY_NOARCH/opt
 
 source ~/.me/java
+source ~/.me/ncss
 source ~/.me/paths
 source ~/.me/aliases
