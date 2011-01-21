@@ -39,8 +39,10 @@
     [exec]  (print) {ooffice-printeradmin}
   [end]
   [submenu] (logs)
-    [exec]   (system) {xterm -name log -T "System Log" -e sudo tail -f /var/log/messages}
+    [exec]   (apache access) {xterm -name log -T "Apache Access Log" -e tail -f /var/log/apache2/access_log}
+    [exec]   (apache error) {xterm -name log -T "Apache Error Log" -e tail -f /var/log/apache2/error_log}
     [exec]   (netbeans) {xterm -name log -T "NetBeans Log" -e tail -f ~/.netbeans/6.9/var/log/messages.log}
+    [exec]   (system) {xterm -name log -T "System Log" -e sudo tail -f /var/log/messages}
   [end]
   [separator]
   [submenu] (desktop)
