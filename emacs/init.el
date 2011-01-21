@@ -55,7 +55,7 @@
 (add-hook 'php-mode-hook
           '(lambda ()
              (local-set-key [f8] 'phplint-thisfile)))
-
+(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
 (require 'color-theme)
 (color-theme-initialize)
