@@ -1,3 +1,4 @@
 # -*- sh -*-
 
 alias ls='ls -FGH'
+alias systail='$ROOTEXEC tail -f /var/log/system.log'
