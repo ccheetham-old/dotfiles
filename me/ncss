@@ -1,3 +1,4 @@
 # -*- sh -*-
 
 export NCSS_HOME=/tmp/ncss
+export CONNECTOR_TOOLS=~/workspace/connector-tools-trunk

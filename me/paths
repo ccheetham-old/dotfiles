@@ -1,9 +1,11 @@
 # -*- sh -*-
 
+echo HI
 oldpath=$PATH
 
 PATH=~/bin
 PATH=$PATH:$NCSS_HOME/bin
+PATH=$PATH:$CONNECTOR_TOOLS/bin
 PATH=$PATH:$JAVA_HOME/bin
 PATH=$PATH:$ANT_HOME/bin
 PATH=$PATH:$MAVEN_HOME/bin
