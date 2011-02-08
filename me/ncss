@@ -3,3 +3,5 @@
 export NCSS_HOME=/tmp/ncss
 export CONNECTOR_TOOLS=~/workspace/connector-tools-trunk
 export PYTHON_CONNECTOR_HOME=~/workspace/python-connector
+
+alias connd='sudo /etc/init.d/connd'
