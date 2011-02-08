@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ifconfig $(basename $0)

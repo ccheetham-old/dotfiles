@@ -1,4 +1,5 @@
 mybindir = bin
+interfaces = en0
 
 install-exec-hook:
 	link=$(prefix)/$(mybindir); \
@@ -13,4 +14,19 @@ install-exec-hook:
 		fi; \
 	fi; \
 	echo linking $$link to $$target; \
-	ln -s $$target $$link
+	ln -s $$target $$link; \
+	cd $(prefix)/$(mybindir); \
+	for iface in $(interfaces); do \
+		if [[ -e $$iface ]]; then \
+			if [[ -L $$iface ]]; then \
+				echo removing existing link to $$iface; \
+				rm $$iface; \
+			else \
+				echo backing up $$iface; \
+				mv $$iface $$iface.backup; \
+			fi; \
+		fi; \
+		echo linking _ifconfig to $$iface; \
+		ln -s _ifconfig $$iface; \
+	done
+
