@@ -125,7 +125,7 @@ alias mdoc='mvn javadoc:javadoc'
 # web
 #
 
-alias web='sudo /etc/init.d/apache2'
+alias apache='sudo /etc/init.d/apache2'
 
 
 #
