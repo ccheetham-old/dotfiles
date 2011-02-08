@@ -103,13 +103,13 @@ function sd {
 alias g='git'
 alias gd='git diff'
 alias g\?='git status'
-alias ga='git add'
-alias gp='git svn rebase'
-alias gP='git svn dcommit'
+alias g\+='git add'
+alias gp='git pull'
+alias gP='git push'
 alias gc='git commit'
 alias gs='git stash'
 alias gR='git checkout -f'
-alias gD='git rm'
+alias g\-='git rm'
 
 
 #
