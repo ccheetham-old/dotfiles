@@ -1,5 +1,5 @@
 mybindir = bin
-interfaces = en0
+interfaces = e1000g0 e1000g1 en0 eth0 wlan0
 
 install-exec-hook:
 	link=$(prefix)/$(mybindir); \
