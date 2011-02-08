@@ -1,7 +1,7 @@
                                         ; add my lisp dir to the load path
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/site-lisp/")
-	   (default-directory my-lisp-dir))
+           (default-directory my-lisp-dir))
       (setq load-path (cons my-lisp-dir load-path))
       (normal-top-level-add-subdirs-to-load-path)))
 
@@ -11,7 +11,7 @@
 
                                         ; no menu or toolbar
 (menu-bar-mode nil)
-(if window-system (tool-bar-mode nil))
+(tool-bar-mode nil)
 
                                         ; syntax coloring by default
 (global-font-lock-mode t)
@@ -48,6 +48,8 @@
 ;;             (auto-fill-mode t)))
 
                                         ; php
+
+(require 'php-mode)
 
 (defun phplint-thisfile()
   (interactive)
