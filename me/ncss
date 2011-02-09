@@ -1,7 +1,9 @@
 # -*- sh -*-
 
 export NCSS_HOME=/tmp/ncss
-export CONNECTOR_TOOLS=~/workspace/connector-tools-trunk
+export CONNECTOR_TOOLS=~/workspace/connector-tools
 export PYTHON_CONNECTOR_HOME=~/workspace/python-connector
 
 alias connd='sudo /etc/init.d/connd'
+
+PATH=$CONNECTOR_TOOLS/bin:$PATH
