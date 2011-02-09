@@ -78,17 +78,19 @@ alias tw='twistd -n'
 alias sg='svn checkout'
 alias si='svn info'
 alias s\?='svn status'
-alias sa='svn add'
+alias s\+='svn add'
 alias sp='svn update'
 alias sP='svn commit'
 alias sR='svn revert'
 alias sl='svn log --stop-on-copy'
 alias sls='svn ls'
 alias sc='svn cp'
-alias sD='svn remove'
+alias s\-='svn remove'
+alias sm='svn move'
 alias sL='sl -rCOMMITTED'
 function sd {
-    svn diff --diff-cmd colordiff $* | less
+    #svn diff --diff-cmd colordiff $* | less
+    svn diff $* | less
 }
 
 
