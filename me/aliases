@@ -18,7 +18,11 @@ alias toor='$ROOTEXEC su -'
 
 alias reboot='$ROOTEXEC reboot'
 alias poweroff='$ROOTEXEC poweroff'
-alias hosts='$ROOTEXEC vi /etc/hosts'
+if [[ $OSTYPE == cygwin ]]; then
+    alias hosts='$EDITOR /cygdrive/c/Windows/System32/drivers/etc/hosts'
+else
+    alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
+fi
 
 alias ifconfig='/sbin/ifconfig'
 
