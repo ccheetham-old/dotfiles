@@ -1,0 +1,8 @@
+#!/bin/sh
+
+CLOJURE=~/local/opt/clojure/clojure.jar
+JLINE=~/local/opt/jline/jline.jar
+
+CLASSPATH=$JLINE:$CLOJURE java -Xmx3G -server \
+    jline.ConsoleRunner clojure.main $*
+#CLASSPATH=$CLOJURE java -Xmx3G -server clojure.main $*
