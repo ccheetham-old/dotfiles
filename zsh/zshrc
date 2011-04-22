@@ -9,8 +9,9 @@ setopt append_history extended_history share_history hist_ignore_all_dups
 setopt promptsubst
 
 export EDITOR=vi
-
 bindkey -e
+
+export WORDCHARS=''        # delete paths one node at a time
 
 autoload -Uz compinit
 compinit
