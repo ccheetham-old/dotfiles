@@ -1,0 +1,4 @@
+# -*- sh -*-
+
+PHP_HOME=/Applications/MAMP/bin/php5.3
+PEAR_HOME=$MY_NOARCH/pear
