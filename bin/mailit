@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+import os
+import smtplib
+import sys
+from email.mime.application import MIMEApplication
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+
+log = sys.stdout
+
+subject = sys.argv[1]
+imgdir = sys.argv[2]
+
+fromaddr = 'Chris Cheetham <chris@cheetham.com>'
+distlist = [
+    'Mike Cole <mcole@solidearthtech.com>',
+#    'Mike Hughes <mikehughes77@gmail.com>',
+#    'Bruce Welch <bwelch@thegranitegroup.com>',
+    ]
+
+mailer = smtplib.SMTP('smtp.gmail.com')
+log.write('opening connection ...')
+log.flush()
+mailer.starttls()
+log.write('done\n')
+log.write('logging in ...')
+log.flush()
+mailer.login('ccheetham@gmail.com', ';;yankees')
+log.write('done\n')
+
+for p in os.listdir(imgdir):
+    ext = os.path.splitext(p)[1]
+    if ext in ['.JPG', '.jpg']:
+        mime = MIMEImage
+    elif ext in ['.MOV']:
+        mime = MIMEApplication
+    else:
+        continue
+    msg =  MIMEMultipart()
+    msg['Subject'] = '%s - %s' % (subject, p)
+    msg['From'] = fromaddr
+    msg['To'] = ', '.join(distlist)
+    msg.preamble = msg['Subject']
+    with open(os.path.join(imgdir, p), 'rb') as f:
+        att = mime(f.read())
+    att.add_header('Content-Disposition', 'attachment; filename="%s"' % p)
+    msg.attach(att)
+    log.write('sending %s ...' % p)
+    log.flush()
+    mailer.sendmail(fromaddr, distlist, msg.as_string())
+    log.write('done\n')
