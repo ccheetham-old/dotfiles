@@ -17,7 +17,7 @@ export MY_ARCH_OPT=$MY_ARCH/opt
 export MY_NOARCH=~/local
 export MY_NOARCH_OPT=$MY_NOARCH/opt
 
-for f in ncss java python php paths aliases; do
+for f in java python php paths aliases ncss; do
     source ~/.me/$f
     [[ -f ~/.me/$f-$MY_OS ]] && source ~/.me/$f-$MY_OS
 done
