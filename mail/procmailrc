@@ -21,7 +21,7 @@ NL="
 | formail -D 16384 .msgid.cache
 
 :0 a
-.duplicates/
+duplicates/
 
 #people we always allow mail from
 #:0
@@ -40,34 +40,45 @@ NL="
 
 #now put my mail lists into mailboxes
 :0
-* ^List-Id:.*css-dev.forge.provo.novell.com
-.novell-css-vc/
+* ^List-Id:.*-dev.forge.provo.novell.com
+novell-css-vc/
 
 :0
 * ^List-Id:.*Cloud Security Services build notification mail list
-.novell-css-build/
+novell-css-build/
+
+:0
+* ^From: Build Automation
+novell-css-build/
 
 :0
 * ^List-Id:.*css-engineers.lists.novell.com
-.novell-css-engr/
+novell-css-engr/
 
 :0
 * ^List-Id:.*Discussions for Cloud Security Service connectors
-.novell-css-conn/
+novell-css-conn/
 
 :0
 * ^From: bugzilla_noreply@novell.com
-.novell-css-bug/
+novell-css-bug/
 
 # catch any other Novell mail
 :0
 * ^From:.*novell.com
-.novell/
+novell/
 
 # the test folks in India
 :0
 * ^From:.*\@applabs.com
-.novell/
+novell/
+
+:0
+* ^X-Sender: MPlus Notification System
+novell-quarantine/
+
+
+
 
 
 ################################
@@ -76,4 +87,4 @@ NL="
 ################################
 :0
 * .*
-.default/
+default/
