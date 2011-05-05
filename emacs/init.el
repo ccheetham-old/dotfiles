@@ -4,14 +4,20 @@
            (default-directory my-lisp-dir))
       (setq load-path (cons my-lisp-dir load-path))
       (normal-top-level-add-subdirs-to-load-path)))
+;(setq my-site-lisp "~/.emacs.d/site-lisp")
+;(add-to-list 'load-path my-site-lisp)
+
+                                        ; no menu or toolbar
+;(menu-bar-mode nil)
+;(tool-bar-mode nil)
+;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
 
                                         ; do not display startup screen
 (setq inhibit-splash-screen t)
 
-
-                                        ; no menu or toolbar
-(menu-bar-mode nil)
-(tool-bar-mode nil)
 
                                         ; syntax coloring by default
 (global-font-lock-mode t)
@@ -59,75 +65,16 @@
              (local-set-key [f8] 'phplint-thisfile)))
 (autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
+(require 'js2-mode)
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 (require 'color-theme)
 (color-theme-initialize)
-(defun color-theme-cheetos ()
-  "Cheetos color theme"
-  (interactive)
-  (color-theme-install
-   '(color-theme-cheetos
-     ((background-color . "#222228")
-      (background-mode . dark)
-      (border-color . "#111")
-      (cursor-color . "yellow")
-      (foreground-color . "#ddd")
-      (mouse-color . "sienna1"))
-     (default ((t (:background "#111" :foreground "#ddd"))))
-     (blue ((t (:foreground "blue"))))
-     (bold ((t (:bold t))))
-     (bold-italic ((t (:bold t :slant italic))))
-     (border-glyph ((t (nil))))
-     (buffers-tab ((t (:background "#111" :foreground "#ddd"))))
-     (diff-added ((t (:background "pale green" :foreground "black"))))
-     (diff-removed ((t (:background "light coral" :foreground "black"))))
-     (font-lock-builtin-face ((t (:foreground "#dd7b3b"))))
-     (font-lock-comment-face ((t (:foreground "orange" ))))
-     (font-lock-constant-face ((t (:foreground "#99cf50"))))
-     (font-lock-doc-string-face ((t (:foreground "#9b859d"))))
-     (font-lock-function-name-face ((t (:foreground "#e9c062" :bold t))))
-     (font-lock-keyword-face ((t (:foreground "#cf6a4c" :bold t))))
-     (font-lock-preprocessor-face ((t (:foreground "#aeaeae"))))
-     (font-lock-reference-face ((t (:foreground "8b98ab"))))
-     (font-lock-string-face ((t (:foreground "#65b042"))))
-     (font-lock-type-face ((t (:foreground "#c5af75"))))
-     (font-lock-variable-name-face ((t (:foreground "#3387cc"))))
-     (font-lock-warning-face ((t (:bold t :background "#420e09" :foreground "#eeeeee"))))
-     (erc-current-nick-face ((t (:foreground "#aeaeae"))))
-     (erc-default-face ((t (:foreground "#ddd"))))
-     (erc-keyword-face ((t (:foreground "#cf6a4c"))))
-     (erc-notice-face ((t (:foreground "#666"))))
-     (erc-timestamp-face ((t (:foreground "#65b042"))))
-     (erc-underline-face ((t (:foreground "c5af75"))))
-     (nxml-attribute-local-name-face ((t (:foreground "#3387cc"))))
-     (nxml-attribute-colon-face ((t (:foreground "#e28964"))))
-     (nxml-attribute-prefix-face ((t (:foreground "#cf6a4c"))))
-     (nxml-attribute-value-face ((t (:foreground "#65b042"))))
-     (nxml-attribute-value-delimiter-face ((t (:foreground "#99cf50"))))
-     (nxml-namespace-attribute-prefix-face ((t (:foreground "#9b859d"))))
-     (nxml-comment-content-face ((t (:foreground "#666"))))
-     (nxml-comment-delimiter-face ((t (:foreground "#333"))))
-     (nxml-element-local-name-face ((t (:foreground "#e9c062"))))
-     (nxml-markup-declaration-delimiter-face ((t (:foreground "#aeaeae"))))
-     (nxml-namespace-attribute-xmlns-face ((t (:foreground "#8b98ab"))))
-     (nxml-prolog-keyword-face ((t (:foreground "#c5af75"))))
-     (nxml-prolog-literal-content-face ((t (:foreground "#dad085"))))
-     (nxml-tag-delimiter-face ((t (:foreground "#cda869"))))
-     (nxml-tag-slash-face ((t (:foreground "#cda869"))))
-     (nxml-text-face ((t (:foreground "#ddd"))))
-     (gui-element ((t (:background "#0e2231" :foreground "black"))))
-     (highlight ((t (:background "palegreen" :foreground "black" :bold t :slant italic))))
-     ;(highline-face ((t (:background "#4a410d"))))
-     (highline-face ((t (:background "red"))))
-     (italic ((t (nil))))
-     (left-margin ((t (nil))))
-     (mmm-default-submode-face ((t (:background "#111"))))
-     (mode-line ((t (:background "#e6e5e4" :foreground "black"))))
-     (primary-selection ((t (:background "#9364D4"))))
-     (region ((t (:background "#9364d4"))))
-     (text-cursor ((t (:background "yellow" :foreground "black"))))
-     (underline ((nil (:underline nil)))))))
+(require 'color-theme-cheetos)
 (color-theme-cheetos)
-
+;; (require 'color-theme-subdued)
+;; (color-theme-subdued)
                                         ; key bindings
 (global-set-key (kbd "C-x C-b") 'electric-buffer-list)
 (global-set-key (kbd "C-.") 'next-error)
@@ -153,4 +100,4 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+ '(rst-level-1-face ((t (:background "grey30")))))
