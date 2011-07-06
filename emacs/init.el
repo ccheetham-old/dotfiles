@@ -65,14 +65,13 @@
              (local-set-key [f8] 'phplint-thisfile)))
 (autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
-(require 'js2-mode)
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; (require 'js2-mode)
+;; (autoload 'js2-mode "js2" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 (require 'color-theme)
 (color-theme-initialize)
-(require 'color-theme-cheetos)
-(color-theme-cheetos)
+;(require 'color-theme-cheetos)
 ;; (require 'color-theme-subdued)
 ;; (color-theme-subdued)
                                         ; key bindings
@@ -80,6 +79,53 @@
 (global-set-key (kbd "C-.") 'next-error)
 (global-set-key (kbd "C-,") 'previous-error)
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+
+(defun color-theme-cheetos ()
+  (interactive)
+  (color-theme-install
+   '(color-theme-cheetos
+     ((background-color . "#0C1021")
+      (background-mode . dark)
+      (border-color . "black")
+      (cursor-color . "#A7A7A7")
+      (foreground-color . "#F8F8F8")
+      (mouse-color . "sienna1"))
+     (default ((t (:background "#0C1021" :foreground "#F8F8F8"))))
+     (blue ((t (:foreground "blue"))))
+     (bold ((t (:bold t))))
+     (bold-italic ((t (:bold t))))
+     (border-glyph ((t (nil))))
+     (buffers-tab ((t (:background "#0C1021" :foreground "#F8F8F8"))))
+     (font-lock-builtin-face ((t (:foreground "#F8F8F8"))))
+     (font-lock-comment-face ((t (:italic t :foreground "#AEAEAE"))))
+     (font-lock-constant-face ((t (:foreground "#D8FA3C"))))
+     (font-lock-doc-string-face ((t (:foreground "DarkOrange"))))
+     (font-lock-function-name-face ((t (:foreground "#FF6400"))))
+     (font-lock-keyword-face ((t (:foreground "#FBDE2D"))))
+     (font-lock-preprocessor-face ((t (:foreground "Aquamarine"))))
+     (font-lock-reference-face ((t (:foreground "SlateBlue"))))
+
+     (font-lock-regexp-grouping-backslash ((t (:foreground "#E9C062"))))
+     (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
+
+     (font-lock-string-face ((t (:foreground "#61CE3C"))))
+     (font-lock-type-face ((t (:foreground "#8DA6CE"))))
+     (font-lock-variable-name-face ((t (:foreground "#FF6400"))))
+     (font-lock-warning-face ((t (:bold t :foreground "Pink"))))
+     (gui-element ((t (:background "#D4D0C8" :foreground "black"))))
+     (region ((t (:background "#253B76"))))
+     (mode-line ((t (:background "grey75" :foreground "black"))))
+     (highlight ((t (:background "#222222"))))
+     (highline-face ((t (:background "SeaGreen"))))
+     (italic ((t (nil))))
+     (left-margin ((t (nil))))
+     (text-cursor ((t (:background "yellow" :foreground "black"))))
+     (toolbar ((t (nil))))
+     (underline ((nil (:underline nil))))
+     (zmacs-region ((t (:background "snow" :foreground "ble")))))))
+(color-theme-cheetos)
+
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
