@@ -7,6 +7,7 @@
     [exec]   (alsamixer) {xterm -e alsamixer}
     [exec]   (alsaplayer) {alsaplayer}
     [exec]   (emacs) {emacs ~/workspace}
+    [exec]   (eog) {eog}
     [exec]   (evince) {evince}
     [exec]   (firefox) {firefox}
     [exec]   (gimp) {gimp}
@@ -21,10 +22,15 @@
     [exec]   (view manpage...) {MANPAGE=$(Xdialog --stdout --title "Man Page" --inputbox "Enter man page" 0 0) && yelp man:$MANPAGE}
   [end]
   [submenu] (dev)
-    [exec]   (connd client) {xrestclient -u http://localhost:9980/ -e}
-    [exec]   (connd log) {xterm -name log -T "Connector Log" -e smarttail /tmp/ncss/var/log/connector/connector.log}
-    [exec]   (twistd log) {xterm -name log -T "Twisted Log" -e smarttail /tmp/ncss/var/log/connector/twistd.log}
-    [exec]   (twistd err) {xterm -name log -T "Twisted Errors" -e smarttail /tmp/ncss/var/log/connector/twistd.err}
+    [exec]   (connector) {xterm -T 'Apache Connector' -name ncss -e 'cd $APACHE_CONNECTOR && make run'}
+    [separator]
+    [exec]   (connector client) {xterm -T 'Connector Client' -name ncss -e 'console -u http://localhost:9980/ -e'}
+    [exec]   (event server) {xterm -T 'Event Server' -name ncss -e eventserver}
+    [separator]
+    [exec]   (connector log) {xterm -T 'Connector Log' -name log -e smarttail $NCSS_HOME/var/log/connector/connector.log}
+    [exec]   (event log) {xterm -T 'Event Log' -name log -e smarttail $NCSS_HOME/var/log/connector/event.log}
+    [exec]   (twistd log) {xterm -T 'Twisted Log' -name log -e smarttail $NCSS_HOME/var/log/connector/twistd.log}
+    [exec]   (twistd err) {xterm -T 'Twisted Errors' -name log -e smarttail $NCSS_HOME/var/log/connector/twistd.err}
   [end]
   [submenu] (office)
     [exec]  (draw) {oodraw}

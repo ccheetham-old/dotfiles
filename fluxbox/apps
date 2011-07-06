@@ -22,3 +22,6 @@
 [group]
   [app] (name=log)
 [end]
+[group]
+  [app] (name=ncss)
+[end]

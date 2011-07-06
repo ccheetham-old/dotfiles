@@ -2,5 +2,8 @@
 ! background: none
 #rootCommand:                    xsetroot -solid slategrey
 
+background: none
 background: solid
 background.color: slategrey
+
+*font: sans-9:italic
