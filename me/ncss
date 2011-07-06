@@ -3,6 +3,7 @@
 export NCSS_HOME=/tmp/ncss
 export CONNECTOR_TOOLS=~/workspace/connector-tools
 export APACHE_CONNECTOR=~/workspace/python-connector
+export MOCK_EVENT_SERVER=~/workspace/mock-servers/mock-event-server
 
 PATH=$PATH:$NCSS_HOME/bin
 PATH=$PATH:$CONNECTOR_TOOLS/bin

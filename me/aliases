@@ -23,6 +23,7 @@ if [[ $OSTYPE == cygwin ]]; then
 else
     alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
 fi
+alias renet='sudo /etc/init.d/net.eth0 restart'
 
 alias ifconfig='/sbin/ifconfig'
 
@@ -136,7 +137,7 @@ alias apache='sudo /etc/init.d/apache2'
 
 alias mutt='TERM=rxvt-256color mutt -d2'
 alias f='ncftp'
-alias x='startx'
+alias x='startx >> ~/var/log/xsession'
 
 
 #
