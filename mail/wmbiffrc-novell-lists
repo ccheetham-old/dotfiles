@@ -1,24 +1,24 @@
 label.0=eng
-path.0=maildir:/home/cheetos/var/mail/.novell-css-engr/
-action.0=xmutt -f /home/cheetos/var/mail/.novell-css-engr/
+path.0=mbox:/home/cheetos/var/mail/novell-css-engr
+action.0=xmutt -f /home/cheetos/var/mail/novell-css-engr
 notify.0=beep
 
 label.1=cnn
-path.1=maildir:/home/cheetos/var/mail/.novell-css-conn/
-action.1=xmutt -f /home/cheetos/var/mail/.novell-css-conn/
+path.1=mbox:/home/cheetos/var/mail/novell-css-conn
+action.1=xmutt -f /home/cheetos/var/mail/novell-css-conn
 notify.1=beep
 
 label.2=bld
-path.2=maildir:/home/cheetos/var/mail/.novell-css-build/
+path.2=mbox:/home/cheetos/var/mail/novell-css-build
 notify.2=beep
-action.2=xmutt -f /home/cheetos/var/mail/.novell-css-build/
+action.2=xmutt -f /home/cheetos/var/mail/novell-css-build
 
 label.3=svn
-path.3=maildir:/home/cheetos/var/mail/.novell-css-vc/
+path.3=mbox:/home/cheetos/var/mail/novell-css-vc
 notify.3=beep
-action.3=xmutt -f /home/cheetos/var/mail/.novell-css-vc/
+action.3=xmutt -f /home/cheetos/var/mail/novell-css-vc
 
 label.4=bug
-path.4=maildir:/home/cheetos/var/mail/.novell-css-bug/
-action.4=xmutt -f /home/cheetos/var/mail/.novell-css-bug/
+path.4=mbox:/home/cheetos/var/mail/novell-css-bug
+action.4=xmutt -f /home/cheetos/var/mail/novell-css-bug
 notify.4=beep

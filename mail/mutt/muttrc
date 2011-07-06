@@ -17,8 +17,7 @@ set spoolfile=+novell
 set mbox=+mbox
 set record=+outbox
 set postponed=+drafts
-#mailboxes `echo -n "+ "; find ~/var/mail -type d -name ".*" -printf "+'%f' "`
-mailboxes +novell +novell-css-bug +novell-css-build +novell-css-vc +novell-quarantine
+mailboxes `for d in $(ls ~/var/mail); do echo -n '+'$d' '; done`
 macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 
@@ -51,7 +50,7 @@ unignore organization organisation
 unignore importance
 #unignore message-id references in-reply-to
 unignore content-length lines
-unignore *
+#unignore *
 
 source ~/.mutt/aliases
 set alias_file=~/.mutt/aliases
