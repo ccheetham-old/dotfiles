@@ -36,8 +36,8 @@ set pager_stop
 set index_format="%Z %{%b %d}  %-10.10F  %s"
 set pager_index_lines=6
 
-lists css-connectors@lists.novell.com css-engineers@lists.novell.com css-dev-connector@forge.provo.novell.com css-build@lists.novell.com css-dev@novell.com
-subscribe css-connectors@lists.novell.com css-engineers@lists.novell.com css-dev-connector@forge.provo.novell.com css-build@lists.novell.com css-dev@novell.com
+lists css-connectors@lists.novell.com css-connectors-dev@novell.com css-engineers@lists.novell.com css-dev-connector@forge.provo.novell.com css-build@lists.novell.com css-dev@novell.com
+subscribe css-connectors@lists.novell.com css-connectors-dev@novell.com css-engineers@lists.novell.com css-dev-connector@forge.provo.novell.com css-build@lists.novell.com css-dev@novell.com
 
 #auto_view text/html
 
