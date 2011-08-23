@@ -23,12 +23,12 @@ if [[ $OSTYPE == cygwin ]]; then
 else
     alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
 fi
-alias renet='sudo /etc/init.d/net.eth0 restart'
 
 alias ifconfig='/sbin/ifconfig'
 
 [[ $OSTYPE == solaris* ]] && SYSLOG='/var/adm/messages' || SYSLOG='/var/log/messages'
 alias systail='$ROOTEXEC tail -f $SYSLOG'
+alias space='df -h | grep disk'
 
 
 #
@@ -77,51 +77,26 @@ alias tw='twistd -n'
 
 
 #
-# subversion
-#
-
-alias sg='svn checkout'
-alias si='svn info'
-alias s\?='svn status'
-alias s\+='svn add'
-alias sp='svn update'
-alias sP='svn commit'
-alias sR='svn revert'
-alias sl='svn log --stop-on-copy'
-alias sls='svn ls'
-alias sc='svn cp'
-alias s\-='svn remove'
-alias sm='svn move'
-alias sL='sl -rCOMMITTED'
-function sd {
-    #svn diff --diff-cmd colordiff $* | less
-    svn diff $* | less
-}
-
-
-#
-# git
+# version control
 #
 
 alias g='git'
-alias gd='git diff'
 alias g\?='git status'
-alias g\+='git add'
-alias gp='git pull'
-alias gP='git push'
-alias gc='git commit'
-alias gs='git stash'
-alias gR='git checkout -f'
-alias g\-='git rm'
+alias s='svn'
+alias s\?='svn status'
+function sd {
+    svn diff --diff-cmd colordiff $* | less
+    #svn diff $* | less
+}
 
 
 #
 # java
 #
 
-alias ant='ant -e'
+alias j='java'
+alias a='ant -e'
 alias m='mvn'
-alias mdoc='mvn javadoc:javadoc'
 
 
 #
@@ -132,12 +107,21 @@ alias apache='sudo /etc/init.d/apache2'
 
 
 #
+# logs
+#
+
+alias fetchlog='tail -f ~/var/log/fetchmail'
+
+
+#
 # misc apps
 #
 
+alias b='brew'
 alias mutt='TERM=rxvt-256color mutt -d2'
 alias f='ncftp'
-alias x='startx >> ~/var/log/xsession'
+alias x='startx'
+[[ $MY_OS == "darwin" ]] && alias vi=mvim
 
 
 #
