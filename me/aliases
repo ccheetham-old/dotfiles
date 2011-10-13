@@ -95,8 +95,6 @@ function sd {
 #
 
 alias j='java'
-alias a='ant -e'
-alias m='mvn'
 
 
 #
@@ -121,7 +119,11 @@ alias b='brew'
 alias mutt='TERM=rxvt-256color mutt -d2'
 alias f='ncftp'
 alias x='startx'
-[[ $MY_OS == "darwin" ]] && alias vi=mvim
+if [[ $MY_OS == "darwin" ]]; then
+  alias vi=mvim
+  alias emacs='/usr/local/Cellar/emacs/23.3a/Emacs.app/Contents/MacOS/Emacs -nw'
+fi
+alias v='vmc'
 
 
 #

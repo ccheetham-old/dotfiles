@@ -1,0 +1,5 @@
+#!/bin/sh
+
+M2=~/local/opt/maven2
+
+MAVEN_HOME=$M2 $M2/bin/mvn $*

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export ANT_HOME=~/local/opt/ant
+
+$ANT_HOME/bin/ant -e $*

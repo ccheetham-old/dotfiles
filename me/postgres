@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+export PGDATA=$MY_NOARCH/var/postgres
