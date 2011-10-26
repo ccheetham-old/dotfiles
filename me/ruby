@@ -1,0 +1,4 @@
+#! -*- sh -*- 
+
+RVM_INIT=~/.rvm/scripts/rvm
+[[ -f $RVM_INIT ]] && source $RVM_INIT

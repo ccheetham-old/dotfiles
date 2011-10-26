@@ -1,0 +1,26 @@
+# -*- sh -*-
+
+export VCAP_BVT_TARGET=cheetos.cloudfoundry.me
+
+MFC_HOST=192.168.0.16
+MFC_SSH="ssh root@$MFC_HOST"
+MFC_SYSDIR=/var/vcap/sys
+MFC_LOGDIR=$MFC_SYSDIR/log
+MFC_XTERM="xterm -bg black -fg orange"
+
+# Cloud Controller
+MFC_CC_LOGDIR=$MFC_LOGDIR/cloud_controller
+MFC_CC_LOGCMD="$MFC_SSH tail -f $MFC_CC_LOGDIR/cloud_controller.log"
+alias mfc_cc="$MFC_CC_LOGCMD"
+alias xmfc_cc="$MFC_XTERM -T \"MFC Clound Controller log\" -e $MFC_CC_LOGCMD &"
+MFC_CCEVT_LOGCMD="$MFC_SSH tail -f $MFC_CC_LOGDIR/events.log"
+alias mfc_ccevt="$MFC_CCEVT_LOGCMD"
+alias xmfc_ccevt="$MFC_XTERM -T \"MFC Clound Controller event log\" -e $MFC_CCEVT_LOGCMD &"
+MFC_CCRAILS_LOGCMD="$MFC_SSH tail -f $MFC_CC_LOGDIR/rails.log"
+alias mfc_ccrails="$MFC_CCRAILS_LOGCMD"
+alias xmfc_ccrails="$MFC_XTERM -T \"MFC Clound Controller rails log\" -e $MFC_CCRAILS_LOGCMD &"
+
+# MySQL
+MFC_MYSQL_LOGCMD="$MFC_SSH tail -f $MFC_LOGDIR/mysql/mysqld.err"
+alias mfc_mysql="$MFC_MYSQL_LOGCMD"
+alias xmfc_mysql="$MFC_XTERM -T \"MFC MySQL log\" -e $MFC_MYSQL_LOGCMD &"
