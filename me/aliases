@@ -124,6 +124,7 @@ if [[ $MY_OS == "darwin" ]]; then
   alias emacs='/usr/local/Cellar/emacs/23.3a/Emacs.app/Contents/MacOS/Emacs -nw'
 fi
 alias v='vmc'
+which colordiff > /dev/null && alias diff=colordiff
 
 
 #
@@ -144,6 +145,11 @@ function instkey() {
     ssh $user_host cat tmpkey '>>' .ssh/authorized_keys
     echo cleaning up
     ssh $user_host rm tmpkey
+}
+
+function mcdir() {
+  mkdir $1
+  chdir $1
 }
 
 
