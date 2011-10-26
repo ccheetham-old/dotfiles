@@ -1,5 +1,6 @@
 [user]
-    email = chris@cheetham.com
+    #email = chris@cheetham.com
+    email = ccheetham@gmail.com
     name = Chris Cheetham
 
 [color]
