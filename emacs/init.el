@@ -55,22 +55,24 @@
 
                                         ; php
 
-(require 'php-mode)
+;; (require 'php-mode)
 
-(defun phplint-thisfile()
-  (interactive)
-  (compile (format "php -l %s" (buffer-file-name))))
-(add-hook 'php-mode-hook
-          '(lambda ()
-             (local-set-key [f8] 'phplint-thisfile)))
-(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+;; (defun phplint-thisfile()
+;;   (interactive)
+;;   (compile (format "php -l %s" (buffer-file-name))))
+;; (add-hook 'php-mode-hook
+;;           '(lambda ()
+;;              (local-set-key [f8] 'phplint-thisfile)))
+;; (autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
 ;; (require 'js2-mode)
 ;; (autoload 'js2-mode "js2" nil t)
 ;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+
 (require 'color-theme)
 (color-theme-initialize)
+(require 'color-theme-solarized)
 ;(require 'color-theme-cheetos)
 ;; (require 'color-theme-subdued)
 ;; (color-theme-subdued)
