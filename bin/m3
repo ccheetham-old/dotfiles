@@ -1,5 +1,5 @@
 #!/bin/sh
 
-M3=~/local/opt/maven3
+M3=$MY_NOARCH_OPT/maven3
 
 MAVEN_HOME=$M3 $M3/bin/mvn $*

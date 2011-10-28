@@ -12,9 +12,9 @@ case $OSTYPE in
         ;;
 esac
 
-export MY_ARCH=~/local/${MY_OS}-$(uname -m)
+export MY_ARCH=~/${MY_OS}-$(uname -m)
 export MY_ARCH_OPT=$MY_ARCH/opt
-export MY_NOARCH=~/local
+export MY_NOARCH=~
 export MY_NOARCH_OPT=$MY_NOARCH/opt
 
 for f in java python php postgres ruby scala cftest ssh paths aliases; do

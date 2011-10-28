@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export ANT_HOME=~/local/opt/ant
+export ANT_HOME=$MY_NOARCH_OPT/ant
 
 $ANT_HOME/bin/ant -e $*
