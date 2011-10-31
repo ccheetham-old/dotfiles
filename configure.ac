@@ -12,6 +12,8 @@ fluxbox/Makefile
 git/Makefile
 mail/Makefile
 me/Makefile
+proc/Makefile
+ruby/Makefile
 vim/Makefile
 xorg/Makefile
 zsh/Makefile
