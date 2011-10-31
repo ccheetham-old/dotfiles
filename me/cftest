@@ -10,8 +10,8 @@ export VCAP_BVT_TARGET=cheetos.cloudfoundry.me
 
 
 # MicroCloud Foundry
-MFC_HOST=192.168.0.16
-MFC_SSH="ssh root@$MFC_HOST"
+MFC_HOST=mcfroot
+MFC_SSH="ssh $MFC_HOST"
 MFC_SYSDIR=/var/vcap/sys
 MFC_LOGDIR=$MFC_SYSDIR/log
 MFC_XTERM="xterm -bg black -fg orange"
