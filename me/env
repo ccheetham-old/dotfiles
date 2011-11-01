@@ -1,6 +1,6 @@
 #! -*- sh -*-
 
-SHLOG=1
+#SHLOG=1
 
 case $OSTYPE in
     cygwin*)
