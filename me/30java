@@ -1,0 +1,8 @@
+# -*- sh -*-
+
+if [[ $ME_OS != darwin ]]; then
+    set_envvar JAVA_HOME $ME_ARCH_OPT/jdk
+    add_path $JAVA_HOME
+fi
+
+alias j='java'

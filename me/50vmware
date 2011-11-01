@@ -1,0 +1,6 @@
+# -*- sh -*-
+
+if [[ -d /opt/vmware ]]; then
+    set_envvar VMWARE_TOOLS /opt/vmware
+    add_path $VMWARE_TOOLS
+fi

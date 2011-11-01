@@ -1,4 +1,0 @@
-# -*- sh -*-
-
-VMWARE_TOOLS=/opt/vmware
-PATH=$VMWARE_TOOLS/bin:$PATH

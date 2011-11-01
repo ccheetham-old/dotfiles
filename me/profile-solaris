@@ -1,6 +1,0 @@
-# -*- sh -*-
-
-export CC=/usr/gcc/4.3/bin/gcc
-export CXX=/usr/gcc/4.3/bin/g++
-export ACLOCAL=/usr/bin/aclocal-1.10
-export AUTOMAKE=/usr/bin/automake-1.10

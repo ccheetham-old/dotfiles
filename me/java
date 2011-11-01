@@ -1,6 +1,0 @@
-# -*- sh -*-
-
-[[ $(uname) != "Darwin" ]] && export JAVA_HOME=$MY_ARCH_OPT/jdk
-export ANT_HOME=$MY_NOARCH_OPT/ant
-export MAVEN_HOME=$MY_NOARCH_OPT/maven
-

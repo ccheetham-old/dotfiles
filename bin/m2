@@ -1,5 +1,0 @@
-#!/bin/sh
-
-M2=$MY_NOARCH_OPT/maven2
-
-MAVEN_HOME=$M2 $M2/bin/mvn $*

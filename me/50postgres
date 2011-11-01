@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+set_envvar PGDATA $ME/var/postgres

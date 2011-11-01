@@ -1,0 +1,6 @@
+# -*- sh -*-
+
+if [[ -d $ME_OPT/scala ]]; then
+    set_envvar SCALA_HOME $ME_OPT/scala
+    add_path $SCALA_HOME
+fi

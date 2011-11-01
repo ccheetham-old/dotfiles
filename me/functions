@@ -1,0 +1,20 @@
+# -*- sh -*-
+
+function shlog() {
+    [[ -z $SHLOG ]] && return
+    printf "--- $*\n"
+}
+
+function set_envvar() {
+    local name=$1
+    local value=$2
+    shlog setting $name\=$value
+    eval $name=$value
+}
+
+function add_path() {
+    local segment=$1
+    [[ -d $segment/bin ]] || return
+    shlog prepending path with $segment/bin
+    PATH=$segment/bin:$PATH
+}

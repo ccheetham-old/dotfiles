@@ -1,0 +1,36 @@
+# -*- sh -*-
+
+
+#
+# superuser
+#
+
+[[ $ME_OS == solaris ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
+alias toor='$ROOTEXEC su -'
+
+
+alias ifconfig='/sbin/ifconfig'
+
+case $ME_OS in
+    darwin)
+    SYSLOG=/var/log/system.log
+    ;;
+    solaris)
+    SYSLOG=/var/adm/messages
+    ;;
+    *)
+    SYSLOG=/var/log/messages
+    ;;
+esac
+alias systail='$ROOTEXEC tail -f $SYSLOG'
+
+alias space='df -h | grep disk'
+
+alias reboot='$ROOTEXEC reboot'
+alias poweroff='$ROOTEXEC poweroff'
+
+if [[ $ME_OS == cygwin ]]; then
+    alias hosts='$EDITOR /cygdrive/c/Windows/System32/drivers/etc/hosts'
+else
+    alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
+fi

@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+which colordiff > /dev/null && alias diff=colordiff

@@ -1,0 +1,23 @@
+#! -*- sh -*-
+
+SHLOG=1
+
+case $OSTYPE in
+    cygwin*)
+        ME_OS=cygwin
+        ;;
+    darwin*)
+        ME_OS=darwin
+        ;;
+    linux*)
+        ME_OS=linux
+        ;;
+    solaris*)
+        ME_OS=solaris
+        ;;
+esac
+
+set_envvar ME ~
+set_envvar ME_OPT $ME/opt
+set_envvar ME_ARCH ~/$ME_OS-$(uname -m)
+set_envvar ME_ARCH_OPT $ME_ARCH/opt

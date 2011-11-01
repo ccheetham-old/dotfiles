@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+which vim > /dev/null && alias vi=vim

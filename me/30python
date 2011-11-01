@@ -1,0 +1,8 @@
+# -*- sh -*-
+
+set_envvar PYTHON_VERSION 2.6
+set_envvar PYTHONPATH $ME/lib/python${PYTHON_VERSION}/site-packages
+
+alias py='python'
+alias pypath='echo $PYTHONPATH'
+alias tw='twistd -n'

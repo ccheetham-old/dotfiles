@@ -1,0 +1,25 @@
+# -*- sh -*-
+
+if which keychain > /dev/null; then
+    shlog using keychain
+    keychain --quiet
+    set_envvar KEYCHAIN_ENV ~/.keychain/$(uname -n)-sh
+    [[ -f $KEYCHAIN_ENV ]] && source $KEYCHAIN_ENV
+fi
+
+function instkey() {
+    if [[ $# != 1 ]]; then
+        echo "Usage: $0 <host>"
+        return
+    fi
+    local user_host=$1
+    echo initializing remote keystore directory
+    ssh $user_host mkdir -p .ssh
+    echo copying public key
+    scp ~/.ssh/id_dsa.pub ${user_host}:tmpkey
+    echo installing public key
+    ssh $user_host cat tmpkey '>>' .ssh/authorized_keys
+    echo cleaning up
+    ssh $user_host rm tmpkey
+}
+

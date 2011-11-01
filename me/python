@@ -1,6 +1,0 @@
-# -*- sh -*-
-
-PYTHON_VERSION=2.7
-
-PYTHONPATH=$MY_NOARCH/lib/python${PYTHON_VERSION}/site-packages
-export PYTHONPATH

@@ -1,5 +1,0 @@
-# -*- sh -*-
-
-which keychain > /dev/null && keychain --quiet
-KEYCHAIN_ENV=~/.keychain/$(uname -n)-sh
-[ -f $KEYCHAIN_ENV ] && source $KEYCHAIN_ENV

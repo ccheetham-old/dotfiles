@@ -1,0 +1,5 @@
+# -*- sh -*-
+
+alias g='git'
+alias g\?='g status'
+alias gd='g diff'
