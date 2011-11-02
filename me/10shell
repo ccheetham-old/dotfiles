@@ -9,7 +9,11 @@ alias path='echo $PATH'
 if [[ $ME_OS == darwin ]]; then
     alias ls='ls -FGH'
 else
-    alias ls='ls --classify --color --group-directories-first'
+    if ls --group-directories-first > /dev/null 2>&1; then
+        alias ls='ls --classify --color --group-directories-first'
+    else
+        alias ls='ls --classify --color'
+    fi
 fi
 alias ll='ls -l'
 alias lh='ll -h'
