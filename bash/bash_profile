@@ -1,0 +1,7 @@
+# -*- sh -*-
+
+if [[ $(basename $SHELL) != zsh ]]; then
+    if which zsh > /dev/null 2>&1; then
+        SHELL=$(which zsh) && exec zsh
+    fi
+fi
