@@ -10,6 +10,7 @@ function set_envvar() {
     local value=$2
     shlog setting $name\=$value
     eval $name=$value
+    export $name
 }
 
 function add_path() {
