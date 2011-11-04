@@ -15,7 +15,12 @@ function set_envvar() {
 
 function add_path() {
     local segment=$1
-    [[ -d $segment/bin ]] || return
-    shlog prepending path with $segment/bin
-    PATH=$segment/bin:$PATH
+    if [[ -d $segment/sbin ]]; then
+        shlog prepending path with $segment/sbin
+        PATH=$segment/sbin:$PATH
+    fi
+    if [[ -d $segment/bin ]]; then
+        shlog prepending path with $segment/bin
+        PATH=$segment/bin:$PATH
+    fi
 }
