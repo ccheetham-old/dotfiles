@@ -1,0 +1,6 @@
+# -*- sh -*-
+
+if [[ -d $ME_OPT/grails ]]; then
+    set_envvar GRAILS_HOME $ME_OPT/grails
+    add_path $GRAILS_HOME
+fi
