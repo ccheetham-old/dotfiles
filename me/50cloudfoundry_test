@@ -1,6 +1,13 @@
 # -*- sh -*-
 
 
+# pivotal tracker
+function pt() {
+  local ptnbr=${1##pt}
+  open https://www.pivotaltracker.com/story/show/$ptnbr
+}
+
+
 # CF test envirinment
 set_envvar VCAP_BVT_TARGET cheetos.cloudfoundry.me
 
