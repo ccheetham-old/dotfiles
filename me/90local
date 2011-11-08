@@ -1,5 +1,4 @@
 # -*- sh -*-
 
-add_path /usr/local
 add_path $ME
 add_path $ME_ARCH
