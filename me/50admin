@@ -6,7 +6,14 @@
 #
 
 [[ $ME_OS == solaris ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
-alias toor='$ROOTEXEC su -'
+#alias toor='$ROOTEXEC su -'
+function toor() {
+    if [[ $# == 0 ]]; then
+        $ROOTEXEC su -
+    else
+        $ROOTEXEC $*
+    fi
+}
 
 
 alias ifconfig='/sbin/ifconfig'
