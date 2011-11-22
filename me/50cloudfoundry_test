@@ -1,10 +1,20 @@
 # -*- sh -*-
 
 
+# common test commands
+alias bec='bundle exec cucumber'
+
+
 # pivotal tracker
 function pt() {
-  local ptnbr=${1##pt}
-  open https://www.pivotaltracker.com/story/show/$ptnbr
+  local pt_nbr=${1##pt}
+  open https://www.pivotaltracker.com/story/show/$pt_nbr
+}
+
+# jira
+function jcf() {
+  local jira_nbr=${1##cf}
+  open https://issuetracker.springsource.com/browse/CF-$jira_nbr
 }
 
 
