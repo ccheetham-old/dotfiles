@@ -1,0 +1,5 @@
+# -*- sh -*-
+
+if [[ -f /etc/gentoo-release ]]; then
+    alias e='sudo emerge --verbose'
+fi
