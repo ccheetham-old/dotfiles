@@ -1,0 +1,3 @@
+# -*- sh -*-
+
+[[ $ME_OS != "darwin" ]] && alias rmqctl='toor rabbitmqctl'
