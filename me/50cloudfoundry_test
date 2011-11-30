@@ -1,20 +1,28 @@
-# -*- sh -*-
-
-
 # common test commands
 alias bec='bundle exec cucumber'
 
-
-# pivotal tracker
-function pt() {
-  local pt_nbr=${1##pt}
-  open https://www.pivotaltracker.com/story/show/$pt_nbr
-}
-
-# jira
-function jcf() {
-  local jira_nbr=${1##cf}
-  open https://issuetracker.springsource.com/browse/CF-$jira_nbr
+function issue() {
+  local gid=$1
+  local id
+  local url
+  # gerrit
+  id=${gid##ge}
+  if [[ $id != $gid ]]; then
+     open http://cloudfoundry-codereview.qa.mozycloud.com/gerrit/\#change,$id
+     return
+  fi
+  # jira:cf
+  id=${gid##cf}
+  if [[ $id != $gid ]]; then
+     open https://issuetracker.springsource.com/browse/CF-$id
+     return
+  fi
+  # pivotal tracker
+  id=${gid##pt}
+  if [[ $id != $gid ]]; then
+     open https://www.pivotaltracker.com/story/show/$id
+     return
+  fi
 }
 
 
@@ -56,3 +64,5 @@ MCF_HM_LOGDIR=$MCF_LOGDIR/health_manager
 MCF_HM_LOGCMD="$MCF_SSH tail -f $MCF_HM_LOGDIR/health_manager.log"
 alias mcf_hm="$MCF_HM_LOGCMD"
 alias xmcf_hm="$MCF_XTERM -T \"MFC Health Manager log\" -e $MCF_HM_LOGCMD &"
+
+# vim: filetype=sh
