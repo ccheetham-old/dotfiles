@@ -1,8 +1,11 @@
 [begin] (cheetos)
 [encoding] {UTF-8}
-  [exec] (browser) {firefox}
+  [exec] (browser) {chromium}
   [exec]   (term) {xterm}
   [exec]   (root) {xterm -T "root" -e sudo su -}
+  [submenu] (places)
+    [exec]   (cnc windows) {rdesktop -u ccheetham -d s2qa -p 'reds0x08;;' -g 1280x800 -T "vmc-ssrc-2k890 (CNC Windows)" vmc-ssrc-2k890}
+  [end]
   [submenu] (apps)
     [exec]   (alsamixer) {xterm -e alsamixer}
     [exec]   (alsaplayer) {alsaplayer}
@@ -27,7 +30,7 @@
     [exec]   (connector client) {xterm -T 'Connector Client' -name ncss -e 'console -u http://localhost:9980/ -e'}
     [exec]   (event server) {xterm -T 'Event Server' -name ncss -e eventserver}
     [separator]
-    [exec]   (connector log) {xterm -T 'Connector Log' -name log -e smarttail $NCSS_HOME/var/log/connector/connector.log}
+    [exec]   (mfc cloud controller log) {xterm -T 'MCF Cloud Foundry Log' -name log $MFC_CC_LOGCMD}
     [exec]   (event log) {xterm -T 'Event Log' -name log -e smarttail $NCSS_HOME/var/log/connector/event.log}
     [exec]   (twistd log) {xterm -T 'Twisted Log' -name log -e smarttail $NCSS_HOME/var/log/connector/twistd.log}
     [exec]   (twistd err) {xterm -T 'Twisted Errors' -name log -e smarttail $NCSS_HOME/var/log/connector/twistd.err}
@@ -47,6 +50,7 @@
   [submenu] (logs)
     [exec]   (apache access) {xterm -name log -T "Apache Access Log" -e tail -f /var/log/apache2/access_log}
     [exec]   (apache error) {xterm -name log -T "Apache Error Log" -e tail -f /var/log/apache2/error_log}
+    [exec]   (rabbitmq) {xterm -name log -T "RabbitMQ Log" -e tail -f /var/log/rabbitmq/rabbit@$(uname -n).log}
     [exec]   (netbeans) {xterm -name log -T "NetBeans Log" -e tail -f ~/.netbeans/6.9/var/log/messages.log}
     [exec]   (system) {xterm -name log -T "System Log" -e sudo tail -f /var/log/messages}
   [end]
