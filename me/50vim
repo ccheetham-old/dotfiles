@@ -1,3 +1,10 @@
 # -*- sh -*-
 
-which vim > /dev/null && alias vi=vim
+if [[ $ME_OS == darwin ]]; then
+  if [[ -d /usr/local/Cellar/macvim ]]; then
+    alias vim='/usr/local/Cellar/macvim/*/MacVim.app/Contents/MacOS/Vim'
+    alias vi='vim'
+  fi
+else
+  which vim > /dev/null && alias vi='vim'
+fi
