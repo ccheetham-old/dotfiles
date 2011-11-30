@@ -1,3 +1,3 @@
-# -*- sh -*-
-
 alias mutt='mutt -d2'
+
+# vim: filetype=sh

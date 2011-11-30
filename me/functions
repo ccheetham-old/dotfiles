@@ -1,26 +1,29 @@
-# -*- sh -*-
-
-function shlog() {
-    [[ -z $SHLOG ]] && return
-    printf "--- $*\n"
+function shlog()
+{
+  [[ -z $SHLOG ]] && return
+  printf "--- $*\n"
 }
 
-function set_envvar() {
-    local name=$1
-    local value=$2
-    shlog setting $name\=$value
-    eval $name=$value
-    export $name
+function set_envvar()
+{
+  local name=$1
+  local value=$2
+  shlog setting $name\=$value
+  eval $name=$value
+  export $name
 }
 
-function add_path() {
-    local segment=$1
-    if [[ -d $segment/sbin ]]; then
-        shlog prepending path with $segment/sbin
-        PATH=$segment/sbin:$PATH
-    fi
-    if [[ -d $segment/bin ]]; then
-        shlog prepending path with $segment/bin
-        PATH=$segment/bin:$PATH
-    fi
+function add_path()
+{
+  local segment=$1
+  if [[ -d $segment/sbin ]]; then
+    shlog prepending path with $segment/sbin
+    PATH=$segment/sbin:$PATH
+  fi
+  if [[ -d $segment/bin ]]; then
+    shlog prepending path with $segment/bin
+    PATH=$segment/bin:$PATH
+  fi
 }
+
+# vim: filetype=sh

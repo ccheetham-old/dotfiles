@@ -1,9 +1,9 @@
-# -*- sh -*-
-
 if [[ -d $ME_OPT/ant ]]; then
-    set_envvar ANT_HOME $ME_OPT/ant
-    add_path $ANT_HOME
+  set_envvar ANT_HOME $ME_OPT/ant
+  add_path $ANT_HOME
 fi
 
 alias ant='ant -e'
 alias a='ant'
+
+# vim: filetype=sh

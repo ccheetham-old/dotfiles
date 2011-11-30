@@ -1,14 +1,13 @@
-# -*- sh -*-
-
 export BASEDIR=$(dirname $0)
 
 source $BASEDIR/functions
 source $BASEDIR/env
 
 for f in $(ls $BASEDIR/[[:digit:]]*); do
-    shlog sourcing $f
-    source $f
+  shlog sourcing $f
+  source $f
 done
 
 unset BASEDIR
 
+# vim: filetype=sh

@@ -1,5 +1,5 @@
-# -*- sh -*-
-
 if [[ $ME_OS == darwin ]]; then
-    alias b='brew'
+  alias b='brew'
 fi
+
+# vim: filetype=sh

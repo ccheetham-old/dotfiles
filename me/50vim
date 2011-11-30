@@ -1,5 +1,3 @@
-# -*- sh -*-
-
 if [[ $ME_OS == darwin ]]; then
   if [[ -d /usr/local/Cellar/macvim ]]; then
     alias vim='/usr/local/Cellar/macvim/*/MacVim.app/Contents/MacOS/Vim'
@@ -8,3 +6,5 @@ if [[ $ME_OS == darwin ]]; then
 else
   which vim > /dev/null && alias vi='vim'
 fi
+
+# vim: filetype=sh

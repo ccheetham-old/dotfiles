@@ -1,8 +1,9 @@
-# -*- sh -*-
-
 alias s='svn'
 alias s\?='svn status'
-function sd {
-    s diff --diff-cmd colordiff $* | less
-    #svn diff $* | less
+function sd
+{
+  s diff --diff-cmd colordiff $* | less
+  #svn diff $* | less
 }
+
+# vim: filetype=sh

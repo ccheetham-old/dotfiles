@@ -1,19 +1,16 @@
-# -*- sh -*-
-
-
 alias upalias='. ~/.me/aliases'
 
 alias h='history -fD'
 alias path='echo $PATH'
 
 if [[ $ME_OS == darwin ]]; then
-    alias ls='ls -FGH'
+  alias ls='ls -FGH'
 else
-    if ls --group-directories-first > /dev/null 2>&1; then
-        alias ls='ls --classify --color --group-directories-first'
-    else
-        alias ls='ls --classify --color'
-    fi
+  if ls --group-directories-first > /dev/null 2>&1; then
+    alias ls='ls --classify --color --group-directories-first'
+  else
+    alias ls='ls --classify --color'
+  fi
 fi
 alias ll='ls -l'
 alias lh='ll -h'
@@ -21,9 +18,12 @@ alias la='ls -a'
 alias lla='ls -la'
 
 alias mkdir='mkdir -p'
-function mcdir() {
+function mcdir()
+{
   mkdir $1
   chdir $1
 }
 
 alias watch='watch -n1'
+
+# vim: filetype=sh

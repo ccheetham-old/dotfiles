@@ -1,31 +1,29 @@
-# -*- sh -*-
-
-
 #
 # superuser
 #
 
 [[ $ME_OS == solaris ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
 #alias toor='$ROOTEXEC su -'
-function toor() {
-    if [[ $# == 0 ]]; then
-        $ROOTEXEC su -
-    else
-        $ROOTEXEC $*
-    fi
+function toor()
+{
+  if [[ $# == 0 ]]; then
+    $ROOTEXEC su -
+  else
+    $ROOTEXEC $*
+  fi
 }
 
 
 alias ifconfig='/sbin/ifconfig'
 
 case $ME_OS in
-    darwin)
+  darwin)
     SYSLOG=/var/log/system.log
     ;;
-    solaris)
+  solaris)
     SYSLOG=/var/adm/messages
     ;;
-    *)
+  *)
     SYSLOG=/var/log/messages
     ;;
 esac
@@ -37,7 +35,9 @@ alias reboot='$ROOTEXEC reboot'
 alias poweroff='$ROOTEXEC poweroff'
 
 if [[ $ME_OS == cygwin ]]; then
-    alias hosts='$EDITOR /cygdrive/c/Windows/System32/drivers/etc/hosts'
+  alias hosts='$EDITOR /cygdrive/c/Windows/System32/drivers/etc/hosts'
 else
-    alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
+  alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
 fi
+
+# vim: filetype=sh

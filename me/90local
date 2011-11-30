@@ -1,4 +1,4 @@
-# -*- sh -*-
-
 add_path $ME
 add_path $ME_ARCH
+
+# vim: filetype=sh

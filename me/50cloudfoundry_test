@@ -1,27 +1,28 @@
 # common test commands
 alias bec='bundle exec cucumber'
 
-function issue() {
+function issue()
+{
   local gid=$1
   local id
   local url
   # gerrit
   id=${gid##ge}
   if [[ $id != $gid ]]; then
-     open http://cloudfoundry-codereview.qa.mozycloud.com/gerrit/\#change,$id
-     return
+    open http://cloudfoundry-codereview.qa.mozycloud.com/gerrit/\#change,$id
+    return
   fi
   # jira:cf
   id=${gid##cf}
   if [[ $id != $gid ]]; then
-     open https://issuetracker.springsource.com/browse/CF-$id
-     return
+    open https://issuetracker.springsource.com/browse/CF-$id
+    return
   fi
   # pivotal tracker
   id=${gid##pt}
   if [[ $id != $gid ]]; then
-     open https://www.pivotaltracker.com/story/show/$id
-     return
+    open https://www.pivotaltracker.com/story/show/$id
+    return
   fi
 }
 

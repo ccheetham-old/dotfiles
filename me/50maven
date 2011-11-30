@@ -1,6 +1,6 @@
-# -*- sh -*-
-
 if [[ -d $ME_OPT/maven ]]; then
-    set_envvar MAVEN_HOME $ME_OPT/maven
-    add_path $MAVEN_HOME
+  set_envvar MAVEN_HOME $ME_OPT/maven
+  add_path $MAVEN_HOME
 fi
+
+# vim: filetype=sh

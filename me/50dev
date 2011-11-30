@@ -1,7 +1,7 @@
-# -*- sh -*-
-
-which colordiff > /dev/null && alias diff=colordiff
+which colordiff > /dev/null && alias diff='colordiff'
 
 set_envvar LESS "-RSM~gIsw"
 
 alias ws='cd ~/workspace'
+
+# vim: filetype=sh

@@ -1,5 +1,5 @@
-# -*- sh -*-
-
 if [[ $ME_OS == darwin ]]; then
   alias emacs='/usr/local/Cellar/emacs/23.3a/Emacs.app/Contents/MacOS/Emacs -nw'
 fi
+
+# vim: filetype=sh

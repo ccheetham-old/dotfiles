@@ -1,6 +1,6 @@
-# -*- sh -*-
-
 if [[ -d $ME_OPT/groovy ]]; then
-    set_envvar GROOVY_HOME $ME_OPT/groovy
-    add_path $GROOVY_HOME
+  set_envvar GROOVY_HOME $ME_OPT/groovy
+  add_path $GROOVY_HOME
 fi
+
+# vim: filetype=sh

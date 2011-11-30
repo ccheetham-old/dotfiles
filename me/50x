@@ -1,3 +1,3 @@
-# -*- sh -*-
-
 alias x='startx'
+
+# vim: filetype=sh
