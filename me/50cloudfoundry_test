@@ -1,3 +1,5 @@
+export SERVICES="mongodb mysql postgresql rabbitmq redis"
+
 # common test commands
 alias bec='bundle exec cucumber'
 
@@ -32,6 +34,29 @@ set_envvar VCAP_BVT_TARGET foo1.cloudfoundry.me
 
 # CF test tools
 [ -d ~/workspace/tools/gerrit ] && PATH=~/workspace/tools/gerrit:$PATH
+
+# vmc helpers
+
+function deploy()
+{
+  local app=$1
+  shift
+
+  yes '' | vmc push $app $*
+  for service in $(echo $SERVICES); do
+    vmc create-service $service $service-$app --bind $app
+  done
+}
+
+function undeploy()
+{
+  local app=$1
+
+  for service in $(echo $SERVICES); do
+    vmc delete-service $service-$app
+  done
+  yes '' | vmc delete $app
+}
 
 
 ##
