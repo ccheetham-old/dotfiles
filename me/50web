@@ -1,0 +1,6 @@
+function www()
+{
+  firefox $* &
+}
+
+# vim: filetype=sh
