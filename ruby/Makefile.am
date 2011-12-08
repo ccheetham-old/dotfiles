@@ -1,4 +1,4 @@
-files = gemrc
+files = gemrc rvmrc
 
 install-data-hook:
 	for f in $(files); do \

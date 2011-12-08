@@ -1,4 +1,4 @@
-RVM_INIT=~/.rvm/scripts/rvm
+RVM_INIT=$ME_ARCH/rvm/scripts/rvm
 [[ -f $RVM_INIT ]] && source $RVM_INIT
 
 # vim: filetype=sh
