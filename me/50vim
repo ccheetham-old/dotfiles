@@ -7,4 +7,6 @@ else
   which vim > /dev/null && alias vi='vim'
 fi
 
+alias view='vi -R'
+
 # vim: filetype=sh
