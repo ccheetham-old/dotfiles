@@ -3,6 +3,8 @@ alias upalias='. ~/.me/aliases'
 alias h='history -fD'
 alias path='echo $PATH'
 
+[[ $TERM == xterm ]] && TERM=xterm-256color
+
 if [[ $ME_OS == darwin ]]; then
   alias ls='ls -FGH'
 else
