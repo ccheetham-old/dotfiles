@@ -1,1 +1,1 @@
-SUBDIRS = bash bin fluxbox git me proc ruby vim xorg zsh
+SUBDIRS = bash bin git me proc ruby vim xorg zsh

@@ -10,7 +10,6 @@ AC_OUTPUT([
 Makefile
 bash/Makefile
 bin/Makefile
-fluxbox/Makefile
 git/Makefile
 me/Makefile
 proc/Makefile
