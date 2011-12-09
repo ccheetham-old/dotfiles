@@ -1,74 +1,123 @@
-scriptencoding utf-8
+set nocompatible
 
-set nocompatible        " Use Vim defaults (much better!)
-set bs=2                " Allow backspacing over everything in insert mode
-set ai                  " Always set auto-indenting on
-set history=50          " keep 50 lines of command history
-set visualbell          " Quiet please!
-set viminfo='20,\"500   " Keep a .viminfo file.
-set showmatch           " show matching brackets et al
-set whichwrap=h,l       " these can go thru end-of-lines
+call pathogen#infect()
 
+filetype on                       " enable file detection
+filetype plugin on                " load plugins for specific file types
+filetype indent on                " load indent spec for specific file types
 
-
-" Indentation
-set tabstop=2           " 4 spaces worth for a TAB
-set expandtab           " spaces in lieu of TABs
-set list                " show TABs as
-set listchars=tab:._    "   .___
-set shiftwidth=2        " number of spaces per indent
-set autoindent          " put the cursor where I'm thinking of next
-map Q gq
-
-
-" TAB completion
-"   When doing tab completion, give the following files lower priority.
-"   (Set 'wildignore' to completely ignore files, and 'wildmenu' to enable
-"   enhanced tab completion.)
-set suffixes+=.info,.aux,.log,.dvi,.bbl,.out
-
-
-" Line, column position
-"   When displaying line numbers, don't use an annoyingly wide number column.
-"   Value is a minimum width to use for the number column, not a fixed size.
-set ruler
-if v:version >= 700
-  set numberwidth=3
-endif
-
-
-" Syntax highlighting settings
-"   Switch syntax highlighting on, when the terminal has colors
-"   Also switch on highlighting the last used search pattern.
+" syntax colors please
 syntax on
-set modeline
-"set hlsearch
+
+" indentation
+set autoindent          " put the cursor where I'm thinking of next
+set expandtab           " spaces in lieu of TABs
+set tabstop=2           " 2 spaces worth for a TAB
+set shiftwidth=2        " number of spaces per indent
+set list                " show TABs as
+
+" line numbering
+set number
+nmap <leader>n :set invnumber<cr>
+nmap <leader>rn :set relativenumber<cr>
+set ruler
+set numberwidth=3
+
+" searching
 set incsearch
-"highlight Statement gui=NONE guifg=DarkMagenta ctermfg=DarkMagenta term=Bold
-"highlight Type gui=NONE guifg=DarkMagenta ctermfg=DarkMagenta term=Bold
-"highlight Comment gui=italic guifg=FireBrick ctermfg=Grey term=Bold
-"highlight Identifier guifg=NavyBlue ctermfg=DarkBlue term=Bold
-"highlight Function guifg=NavyBlue ctermfg=DarkBlue term=Bold
-"highlight String guifg=DarkGreen ctermfg=DarkGreen term=Bold
+nmap <leader>h :set invhlsearch<cr>
+
+" todo: try off/on comparison
+"set hidden
+
+" style aids
+set listchars=tab:._    "   .___
+
+" misc
+set lazyredraw                  " don't update display when macroing
+set showmode                    " tell me what mode I'm in
+set wildmenu                    " enhanced completion
+set viminfo='20,\"500           " Keep a .viminfo file.
+set bs=2                        " backspacing over everything in insert mode
+set visualbell                  " quiet please
+set history=50                  " 50 lines of command history
+
+" edit/source vimrc
+nmap <silent> <leader>ev :edit $MYVIMRC<cr>
+nmap <silent> <leader>sv :source $MYVIMRC<cr>
+
+" toggle paste mode
+nmap <leader>p :set invpaste<cr>:set paste?<cr>
+
+" NERDTree
+map <leader>t :NERDTreeToggle<cr>
 
 
-" Filetypes
-filetype plugin on
-filetype indent on
-let python_highlight_all=1
 
-
-" When editing a file, always jump to the last cursor position
-autocmd BufReadPost *
-    \ if ! exists("g:leave_my_cursor_position_alone") |
-    \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \         exe "normal g'\"" |
-    \     endif |
-    \ endif
-
-autocmd BufRead,BufNewFile *.txt,README,TODO,CHANGELOG,NOTES
-    \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2
-    \ textwidth=70 wrap formatoptions=tcqn
-    \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
-
-abbreviate psvm public static void main(String[] args) {
+"set showmatch           " show matching brackets et al
+"set whichwrap=h,l       " these can go thru end-of-lines
+"
+"
+"map Q gq
+"
+"
+"" TAB completion
+""   When doing tab completion, give the following files lower priority.
+""   (Set 'wildignore' to completely ignore files, and 'wildmenu' to enable
+""   enhanced tab completion.)
+"set suffixes+=.info,.aux,.log,.dvi,.bbl,.out
+"
+"
+"" Line, column position
+""   When displaying line numbers, don't use an annoyingly wide number column.
+""   Value is a minimum width to use for the number column, not a fixed size.
+"set ruler
+"if v:version >= 700
+"  set numberwidth=3
+"endif
+"
+"
+"" Syntax highlighting settings
+""   Switch syntax highlighting on, when the terminal has colors
+""   Also switch on highlighting the last used search pattern.
+"syntax on
+"set modeline
+""highlight Statement gui=NONE guifg=DarkMagenta ctermfg=DarkMagenta term=Bold
+""highlight Type gui=NONE guifg=DarkMagenta ctermfg=DarkMagenta term=Bold
+""highlight Comment gui=italic guifg=FireBrick ctermfg=Grey term=Bold
+""highlight Identifier guifg=NavyBlue ctermfg=DarkBlue term=Bold
+""highlight Function guifg=NavyBlue ctermfg=DarkBlue term=Bold
+""highlight String guifg=DarkGreen ctermfg=DarkGreen term=Bold
+"
+"
+"" Filetypes
+"filetype plugin on
+"filetype indent on
+"let python_highlight_all=1
+"
+"
+"" When editing a file, always jump to the last cursor position
+"autocmd BufReadPost *
+"    \ if ! exists("g:leave_my_cursor_position_alone") |
+"    \     if line("'\"") > 0 && line ("'\"") <= line("$") |
+"    \         exe "normal g'\"" |
+"    \     endif |
+"    \ endif
+"
+"autocmd BufRead,BufNewFile *.txt,README,TODO,CHANGELOG,NOTES
+"    \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2
+"    \ textwidth=70 wrap formatoptions=tcqn
+"    \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+"
+"abbreviate psvm public static void main(String[] args) {
+"
+"" syntax enable
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+"let g:solarized_termcolors=256
+colorscheme solarized
+"
+"map <leader>t :NERDTreeToggle<CR>
