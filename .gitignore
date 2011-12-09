@@ -6,7 +6,9 @@ aclocal.m4
 autom4te.cache/
 config.log
 config.status
+config.status.lineno
 configure
+depcomp
 install-sh
 missing
 .DS_Store
