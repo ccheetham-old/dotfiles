@@ -1,3 +1,0 @@
-[begin] (me)
-      [exec]   (oterm) {xterm -fg orange}
-[end]
