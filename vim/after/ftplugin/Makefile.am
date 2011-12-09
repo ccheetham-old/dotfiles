@@ -1,9 +1,7 @@
-SUBDIRS = after
-
-files = vimrc
+files = python.vim ruby.vim
 
 install-data-hook:
 	$(install_sh) -d $(prefix)/.$(subdir); \
 	for f in $(files); do \
-		$(top_srcdir)/install-sh -m 0644 $$f $(prefix)/.$$f; \
+		$(install_sh) -m 0644 $$f $(prefix)/.$(subdir)/$$f; \
 	done

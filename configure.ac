@@ -15,6 +15,9 @@ me/Makefile
 proc/Makefile
 ruby/Makefile
 vim/Makefile
+vim/after/Makefile
+vim/after/ftplugin/Makefile
+vim/after/syntax/Makefile
 xorg/Makefile
 zsh/Makefile
 ])
