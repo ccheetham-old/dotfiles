@@ -2,5 +2,5 @@ files = gitconfig
 
 install-data-hook:
 	for f in $(files); do \
-		$(top_srcdir)/install-sh -m 0644 $$f $(prefix)/.$$f; \
+		$(install_sh) -m 0644 $$f $(prefix)/.$$f; \
 	done
