@@ -2,13 +2,14 @@ AC_INIT([myenv], [0.0.1])
 
 AC_PREFIX_DEFAULT(${HOME})
 
+AC_PROG_LN_S
+
 AM_INIT_AUTOMAKE([tar-pax])
 
 AC_OUTPUT([
 Makefile
 bash/Makefile
 bin/Makefile
-emacs/Makefile
 fluxbox/Makefile
 git/Makefile
 me/Makefile

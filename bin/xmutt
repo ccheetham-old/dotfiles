@@ -1,3 +1,0 @@
-#!/bin/sh
-
-xterm -T Mail -name mail -bg white -fg black +sb -geometry 80x45 -e mutt $* &
