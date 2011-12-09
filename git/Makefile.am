@@ -1,18 +1,6 @@
-gitfiles = gitconfig
+files = gitconfig
 
 install-data-hook:
-	for f in $(gitfiles); do \
-		link=$(prefix)/.$$f; \
-		target=`pwd`/$$f ; \
-		if [[ -e $$link ]]; then \
-			if [[ -L $$link ]]; then \
-				echo removing existing link to $$link; \
-				rm $$link; \
-			else \
-				echo backing up $$link; \
-				mv $$link $$link.backup; \
-			fi; \
-		fi; \
-		echo linking $$link to $$target; \
-		ln -s $$target $$link; \
+	for f in $(files); do \
+		$(top_srcdir)/install-sh -m 0644 $$f $(prefix)/.$$f; \
 	done
