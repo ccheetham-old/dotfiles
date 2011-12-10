@@ -1,4 +1,4 @@
-AC_INIT([myenv], [0.0.1])
+AC_INIT([myenv], [0.0.2])
 
 AC_PREFIX_DEFAULT(${HOME})
 
