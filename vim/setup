@@ -1,0 +1,40 @@
+#!/bin/sh
+
+BASEDIR=$(pwd)
+
+AUTOLOADS=$BASEDIR/autoload
+BUNDLES=$BASEDIR/bundle
+
+PATHOGEN=pathogen.vim
+PATHOGEN_URL=https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
+SOLARIZED=vim-colors-solarized
+SOLARIZED_GIT=https://github.com/altercation/vim-colors-solarized.git
+
+MKDIR='mkdir -p'
+CLONE='git clone'
+CURL='curl'
+
+function setup_pathogen()
+{
+  if [[ -f $AUTOLOADS/$PATHOGEN ]]; then
+    echo pathogen already installed
+    return
+  fi
+  echo installing pathogen
+  $MKDIR $AUTOLOADS
+  $CURL -o $AUTOLOADS/$PATHOGEN $PATHOGEN_URL
+}
+
+function setup_solarized()
+{
+  if [[ -d $BUNDLES/$SOLARIZED ]]; then
+    echo solarized already installed
+    return
+  fi
+  echo installing solarized
+  $MKDIR $BUNDLES
+  $CLONE $SOLARIZED_GIT $BUNDLES/$SOLARIZED
+}
+
+setup_pathogen
+setup_solarized

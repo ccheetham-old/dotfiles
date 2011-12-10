@@ -18,6 +18,8 @@ vim/Makefile
 vim/after/Makefile
 vim/after/ftplugin/Makefile
 vim/after/syntax/Makefile
+vim/autoload/Makefile
+vim/bundle/Makefile
 xorg/Makefile
 zsh/Makefile
 ])
