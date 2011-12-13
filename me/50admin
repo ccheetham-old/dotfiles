@@ -40,4 +40,8 @@ else
   alias hosts='$ROOTEXEC $EDITOR /etc/hosts'
 fi
 
+if [[ $ME_OS == darwin ]]; then
+  alias top='top -ocpu'
+fi
+
 # vim: filetype=sh
