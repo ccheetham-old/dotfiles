@@ -2,9 +2,9 @@
 
 BASEDIR=$(pwd)
 
-AUTOLOADS=$BASEDIR/autoload
-BUNDLES=$BASEDIR/bundle
-REPOS=$BASEDIR/repo
+AUTOLOADS=autoload
+BUNDLES=bundle
+REPOS=repo
 
 PATHOGEN=pathogen.vim
 PATHOGEN_URL=https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
@@ -14,6 +14,8 @@ NERDTREE=nerdtree
 NERDTREE_GIT=git://github.com/scrooloose/nerdtree.git
 
 MKDIR='mkdir -p'
+RM='rm -f'
+LN='ln -s'
 CLONE='git clone'
 UPDATE='git pull'
 CURL='curl'
@@ -22,23 +24,25 @@ RAKE='rake'
 function setup_pathogen()
 {
   if [[ -f $AUTOLOADS/$PATHOGEN ]]; then
-    echo pathogen already installed
-    return
+    echo updating pathogen
+  else
+    echo installing pathogen
   fi
-  echo installing pathogen
   $MKDIR $AUTOLOADS
   $CURL -o $AUTOLOADS/$PATHOGEN $PATHOGEN_URL
 }
 
 function setup_solarized()
 {
-  if [[ -d $BUNDLES/$SOLARIZED ]]; then
-    echo solarized already installed
-    return
+  if [[ -d $REPOS/$SOLARIZED ]]; then
+    echo updating solarized repo
+    cd $REPOS/$SOLARIZED && $UPDATE && cd -
+  else
+    echo cloning solarized repo
+    $CLONE $SOLARIZED_GIT $REPOS/$SOLARIZED
   fi
-  echo installing solarized
-  $MKDIR $BUNDLES
-  $CLONE $SOLARIZED_GIT $BUNDLES/$SOLARIZED
+  $RM $BUNDLES/$SOLARIZED
+  $LN ../$REPOS/$SOLARIZED $BUNDLES/$SOLARIZED
 }
 
 function setup_nerdtree()
