@@ -54,6 +54,8 @@ nmap <leader>p :set invpaste<cr>:set paste?<cr>
 " NERDTree
 map <leader>t :NERDTreeToggle<cr>
 
+" UltiSnips
+set runtimepath+=~/.vim/repo/UltiSnips
 
 
 "set showmatch           " show matching brackets et al

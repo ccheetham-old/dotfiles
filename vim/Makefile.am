@@ -1,4 +1,4 @@
-SUBDIRS = after autoload bundle
+SUBDIRS = after autoload bundle UltiSnips
 
 files = vimrc
 scripts = setup

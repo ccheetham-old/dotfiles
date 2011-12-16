@@ -20,6 +20,7 @@ vim/after/ftplugin/Makefile
 vim/after/syntax/Makefile
 vim/autoload/Makefile
 vim/bundle/Makefile
+vim/UltiSnips/Makefile
 xorg/Makefile
 zsh/Makefile
 ])

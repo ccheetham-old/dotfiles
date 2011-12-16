@@ -7,11 +7,13 @@ BUNDLES=bundle
 REPOS=repo
 
 PATHOGEN=pathogen.vim
-PATHOGEN_URL=https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
+PATHOGEN_URL=https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/$PATHOGEN
 SOLARIZED=vim-colors-solarized
-SOLARIZED_GIT=https://github.com/altercation/vim-colors-solarized.git
+SOLARIZED_GIT=https://github.com/altercation/$SOLARIZED.git
 NERDTREE=nerdtree
-NERDTREE_GIT=git://github.com/scrooloose/nerdtree.git
+NERDTREE_GIT=git://github.com/scrooloose/$NERDTREE.git
+ULTISNIPS=UltiSnips
+ULTISNIPS_GIT=https://github.com/vim-scripts/$ULTISNIPS.git
 
 MKDIR='mkdir -p'
 RM='rm -f'
@@ -57,6 +59,18 @@ function setup_nerdtree()
   cd $REPOS/$NERDTREE && $RAKE install && cd -
 }
 
+function setup_ultisnips()
+{
+  if [[ -d $REPOS/$ULTISNIPS ]]; then
+    echo updating nerdtree repo
+    cd $REPOS/$ULTISNIPS && $UPDATE && cd -
+  else
+    echo cloning nerdtree repo
+    $CLONE $ULTISNIPS_GIT $REPOS/$ULTISNIPS
+  fi
+}
+
 setup_pathogen
 setup_solarized
 setup_nerdtree
+setup_ultisnips
