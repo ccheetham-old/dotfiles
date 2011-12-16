@@ -16,12 +16,14 @@ set tabstop=2           " 2 spaces worth for a TAB
 set shiftwidth=2        " number of spaces per indent
 set list                " show TABs as
 
-" line numbering
+" line/col numbering
 set number
 nmap <leader>n :set invnumber<cr>
 nmap <leader>rn :set relativenumber<cr>
 set ruler
 set numberwidth=3
+set colorcolumn=80
+set nowrap
 
 " searching
 set incsearch
@@ -119,5 +121,3 @@ else
 endif
 "let g:solarized_termcolors=256
 colorscheme solarized
-"
-"map <leader>t :NERDTreeToggle<CR>
