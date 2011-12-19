@@ -48,6 +48,9 @@ set history=50                  " 50 lines of command history
 nmap <silent> <leader>ev :edit $MYVIMRC<cr>
 nmap <silent> <leader>sv :source $MYVIMRC<cr>
 
+" insert timestamp (YY/MM/DD hh:mm)
+:nnoremap <leader>ts "=strftime("%D %R")<cr>P
+
 " toggle paste mode
 nmap <leader>p :set invpaste<cr>:set paste?<cr>
 
