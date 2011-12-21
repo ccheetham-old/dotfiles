@@ -1,6 +1,39 @@
+FUSION=/Applications/VMware\ Fusion.app/Contents/Library
+VMDIRS=(~/Documents/VMs ~/Documents/Virtual\ Machines)
+
 if [[ -d /opt/vmware ]]; then
   set_envvar VMWARE_TOOLS /opt/vmware
   add_path $VMWARE_TOOLS
 fi
+
+if [[ -d $FUSION ]]; then
+  alias vmrun='$FUSION/vmrun'
+else
+  unset FUSION
+fi
+
+# find a vmx file based on vmname
+function fvmx()
+{
+  if (( $# != 1 )) then
+    echo "$0 hint"
+    return
+  fi
+  local hint=$1
+  local vmx
+  set localtoptions nonomatch
+  for vmdir in $VMDIRS; do
+    [[ -d $vmdir ]] || vmdir=$vmdir.localized
+    [[ -d $vmdir ]] || continue
+    vmdir=$vmdir/$hint
+    [[ -d $vmdir ]] || vmdir=$vmdir.vmwarevm
+    [[ -d $vmdir ]] && vmx=$(/bin/ls $vmdir/*.vmx)
+    if [[ -f $vmx ]]; then
+      print $vmx
+      return
+    fi
+  done
+  return 1
+}
 
 # vim: filetype=sh
