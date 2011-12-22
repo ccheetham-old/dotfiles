@@ -18,6 +18,8 @@ alias ll='ls -l'
 alias lh='ll -h'
 alias la='ls -a'
 alias lla='ls -la'
+alias lf='ls *(.)'
+alias ld='ls -d *(/)'
 
 alias mkdir='mkdir -p'
 function mcdir()
