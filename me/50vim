@@ -1,6 +1,6 @@
 if [[ $ME_OS == darwin ]]; then
   if [[ -d /usr/local/Cellar/macvim ]]; then
-    EDITOR='/usr/local/Cellar/macvim/*/MacVim.app/Contents/MacOS/Vim'
+    EDITOR=$(/bin/ls /usr/local/Cellar/macvim/*/MacVim.app/Contents/MacOS/Vim)
     alias vim=$EDITOR
     alias vi='vim'
   fi
