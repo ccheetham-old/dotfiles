@@ -4,10 +4,9 @@ if [[ $ME_OS == darwin ]]; then
     alias vim=$EDITOR
     alias vi='vim'
   fi
-else
-  which vim > /dev/null && alias vi='vim'
 fi
 
+which vim > /dev/null && alias vi='vim --remote-silent'
 alias view='vi -R'
 
 # vim: filetype=sh
