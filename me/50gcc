@@ -1,0 +1,3 @@
+set_envvar CFLAGS '-march=native'
+set_envvar CXXFLAGS $CFLAGS
+# vim: filetype=sh

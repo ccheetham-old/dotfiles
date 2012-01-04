@@ -1,0 +1,8 @@
+CATALINA_HOME=$ME_OPT/tomcat
+
+if [[ -d $CATALINA_HOME ]]; then
+  set_envvar CATALINA_HOME $CATALINA_HOME
+  alias tc='$CATALINA_HOME/bin/catalina.sh $*'
+fi
+
+# vim: filetype=sh
