@@ -1,12 +1,16 @@
 if [[ $ME_OS == darwin ]]; then
   if [[ -d /usr/local/Cellar/macvim ]]; then
     EDITOR=$(/bin/ls /usr/local/Cellar/macvim/*/MacVim.app/Contents/MacOS/Vim)
-    alias vim=$EDITOR
-    alias vi='vim'
+    alias -g vim=$EDITOR
+    alias -g vi='vim'
+  fi
+else
+  if [[ -x $ME_ARCH/bin/vim ]]; then
+    alias -g vim=$ME_ARCH/bin/vim
   fi
 fi
 
-which vim > /dev/null && alias vi='vim --remote-silent'
-alias view='vi -R'
+which vim > /dev/null && alias -g vi='vim --remote-silent'
+alias view='vim -R'
 
 # vim: filetype=sh
