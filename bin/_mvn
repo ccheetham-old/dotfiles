@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 MAVEN=$(basename $0)
 MAVEN_HOME=~/opt/$MAVEN
