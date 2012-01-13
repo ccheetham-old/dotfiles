@@ -1,9 +1,8 @@
-XTerm*faceName:                DejaVu Sans Mono
+XTerm*faceName:                Inconsolata
 XTerm*faceSize:                10
 xterm*faceSize:                10
 XTerm*pointerMode:             1
 
-XTerm*termName:                xterm-256color
 XTerm*background:              #222228
 XTerm*foreground:              #d0d0d0
 XTerm*color0:                  #2e3436
@@ -37,8 +36,7 @@ XTerm*altSendsEscape:          true
 
 wheel*background:              darkred
 
-log*faceSize:                  8
-log*foreground:                yellowgreen
+log*foreground:                dark khaki
 log*geometry:                  120x20
 
 ncss*foreground:               cornsilk
