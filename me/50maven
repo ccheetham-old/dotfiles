@@ -3,4 +3,25 @@ if [[ -d $ME_OPT/maven ]]; then
   add_path $MAVEN_HOME
 fi
 
+function _maven()
+{
+  local version=$1
+  shift
+  MAVEN_HOME=$ME_OPT/maven${version}
+  MAVEN_HOME=$MAVEN_HOME $MAVEN_HOME/bin/mvn $*
+}
+
+function m2()
+{
+  _maven 2 $*
+}
+
+function m3()
+{
+  _maven 3 $*
+}
+
+alias m=m3
+
+
 # vim: filetype=sh
