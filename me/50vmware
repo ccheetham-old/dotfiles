@@ -6,6 +6,11 @@ if [[ -d /opt/vmware ]]; then
   add_path $VMWARE_TOOLS
 fi
 
+if [[ -d /Applications/OVFTool ]]; then
+  set_envvar OVFTOOL /Applications/OVFTool/ovftool
+  alias ovftool=$OVFTOOL
+fi
+
 if [[ -d $FUSION ]]; then
   alias vmrun='$FUSION/vmrun'
 else
