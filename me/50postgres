@@ -1,3 +1,7 @@
 set_envvar PGDATA $ME/var/postgres
 
+PG_CMD='postgres -d2'
+alias pg="$PG_CMD"
+alias xpg="xterm -title PostgreSQL -name log -e $PG_CMD &"
+
 # vim: filetype=sh
