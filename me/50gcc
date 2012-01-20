@@ -1,3 +1,9 @@
-set_envvar CFLAGS '-march=native'
-set_envvar CXXFLAGS $CFLAGS
+if [[ $ME_OS = darwin ]]; then
+  CFLAGS='-march=core2'
+else
+  CFLAGS='-march=native'
+fi
+CXXFLAGS=$CFLAGS
+export CFLAGS CXXFLAGS
+
 # vim: filetype=sh
