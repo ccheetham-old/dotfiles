@@ -1,5 +1,6 @@
 if [[ -d $ME_OPT/maven ]]; then
   set_envvar MAVEN_HOME $ME_OPT/maven
+  set_envvar MAVEN_OPTS -Xmx1024m
   add_path $MAVEN_HOME
 fi
 
