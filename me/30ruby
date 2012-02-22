@@ -1,4 +1,3 @@
-RVM_INIT=$ME_ARCH/rvm/scripts/rvm
-[[ -f $RVM_INIT ]] && source $RVM_INIT
+# this file intentionally left blank
 
 # vim: filetype=sh
