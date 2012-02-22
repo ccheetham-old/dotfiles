@@ -1,3 +1,5 @@
-[[ $ME_OS != "darwin" ]] && alias rmqctl='toor rabbitmqctl'
+RMQ_LOG_CMD="tail -f /usr/local/var/log/rabbitmq/rabbit@cheetos.log"
+alias rmqlog="$RMQ_LOG_CMD"
+alias xrmqlog='xterm -title RabbitMQ -name log -e "$RMQ_LOG_CMD" &'
 
 # vim: filetype=sh
