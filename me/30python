@@ -2,13 +2,9 @@ PYTHON_VERSION=$(python -V 2>&1)            # Python 2.6.6
 PYTHON_VERSION=$PYTHON_VERSION[(w)2]        # 2.6.6
 PYTHON_VERSION=$PYTHON_VERSION[1,3]         # 2.6
 set_envvar PYTHON_VERSION $PYTHON_VERSION
-
-if which brew >/dev/null 2>&1; then
-  set_envvar PYTHONPATH $(brew --prefix)/lib/python${PYTHON_VERSION}/site-packages
-fi
+set_envvar PYTHONPATH $ME_ARCH/lib/python${PYTHON_VERSION}/site-packages
 
 alias py='python'
 alias pypath='echo $PYTHONPATH'
-alias tw='twistd -n'
 
 # vim: filetype=sh
