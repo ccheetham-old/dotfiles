@@ -1,4 +1,4 @@
-files = Xresources
+files = Xresources xinitrc
 
 install-data-hook:
 	for f in $(files); do \
