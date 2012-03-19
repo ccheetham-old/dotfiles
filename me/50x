@@ -1,3 +1,5 @@
-alias x='startx'
+alias x='startx > ~/var/log/xsession.log 2>&1'
+
+alias xslog='DISPLAY=:0 xterm -title Xsession -name log -e "tail -f ~/var/log/xsession.log" &'
 
 # vim: filetype=sh
