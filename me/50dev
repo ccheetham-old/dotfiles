@@ -1,7 +1,7 @@
 which colordiff > /dev/null && alias diff='colordiff'
 
-set_envvar LESS "-RSM~gIsw"
-
-alias ws='cd ~/workspace'
+alias -g ws='~/workspace'
+alias -g sw='~/workspace/skunkworks'
+alias -g df='~/workspace/dotfiles'
 
 # vim: filetype=sh
