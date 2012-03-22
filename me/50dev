@@ -1,7 +1,7 @@
 which colordiff > /dev/null && alias diff='colordiff'
 
-alias -g ws='~/workspace'
-alias -g sw='~/workspace/skunkworks'
-alias -g df='~/workspace/dotfiles'
+alias ws='~/workspace'
+alias sw='~/workspace/skunkworks'
+alias me='~/workspace/dotfiles'
 
 # vim: filetype=sh
