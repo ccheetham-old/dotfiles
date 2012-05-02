@@ -1,4 +1,4 @@
-export GEM_HOME=$HOME/gems
+export GEM_HOME=$HOME/lib/gems
 add_path $GEM_HOME
 
 # vim: filetype=sh
