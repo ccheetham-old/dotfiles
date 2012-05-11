@@ -14,7 +14,7 @@ bindkey -e
 export WORDCHARS=''        # delete paths one node at a time
 
 autoload -Uz compinit
-compinit
+compinit -d $HOME/.zcompdump-$(hostname)
 
 autoload -U promptinit
 promptinit
