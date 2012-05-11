@@ -1,4 +1,4 @@
-which colordiff > /dev/null && alias diff='colordiff'
+which colordiff > /dev/null 2>&1 && alias diff='colordiff'
 
 alias ws='~/workspace'
 alias sw='~/workspace/skunkworks'
