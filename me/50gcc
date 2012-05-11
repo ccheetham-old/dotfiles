@@ -1,7 +1,9 @@
-if [[ $ME_OS = darwin ]]; then
+if [[ $ME_OS = darwin2 ]]; then
   CFLAGS='-march=core2'
 else
-  CFLAGS='-march=native'
+  if echo "void f(int i) {i++;int j;}" | gcc -xc -c -o /dev/null -march=native - 2> /dev/null; then
+    CFLAGS='-march=native'
+  fi
 fi
 CXXFLAGS=$CFLAGS
 export CFLAGS CXXFLAGS
