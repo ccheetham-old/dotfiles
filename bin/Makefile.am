@@ -3,6 +3,7 @@ ifaces = e1000g0 e1000g1 en0 en1 eth0 wlan0
 maven_script = _mvn
 mavens = mvn2 mvn3
 bin_SCRIPTS = $(iface_script) $(maven_script) colortest smarttail
+dist_data_DATA = $(bin_SCRIPTS)
 
 install-exec-hook:
 	cd $(bindir) && \

@@ -1,10 +1,10 @@
-AC_INIT([myenv], [0.0.2])
+AC_INIT([dotfiles], [0.0.3])
 
 AC_PREFIX_DEFAULT(${HOME})
 
 AC_PROG_LN_S
 
-AM_INIT_AUTOMAKE([tar-pax])
+AM_INIT_AUTOMAKE([tar-ustar])
 
 AC_OUTPUT([
 Makefile
