@@ -1,5 +1,6 @@
 if which vim > /dev/null; then
   EDITOR=vim
+  VISUAL='vim -f'
   alias vi='vim'
 fi
 
