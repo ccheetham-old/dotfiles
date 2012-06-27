@@ -54,6 +54,9 @@ nmap <silent> <leader>sv :source $MYVIMRC<cr>
 " toggle paste mode
 nmap <leader>p :set invpaste<cr>:set paste?<cr>
 
+" toggle wrap mode
+nmap <leader>w :set invwrap<cr>
+
 " NERDTree
 map <leader>t :NERDTreeToggle<cr>
 
