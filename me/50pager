@@ -1,0 +1,8 @@
+if which vimpager > /dev/null; then
+  PAGER=vimpager
+else
+  PAGER=less
+fi
+alias less="$PAGER"
+
+# vim: filetype=sh
