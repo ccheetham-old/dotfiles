@@ -30,7 +30,7 @@ function issue()
 
 
 # CF test envirinment
-set_envvar VCAP_BVT_TARGET foo1.cloudfoundry.me
+export VCAP_BVT_TARGET=foo1.cloudfoundry.me
 
 # CF test tools
 [ -d ~/workspace/tools/gerrit ] && PATH=~/workspace/tools/gerrit:$PATH

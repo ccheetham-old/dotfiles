@@ -1,4 +1,4 @@
-set_envvar PGDATA $ME/var/postgres
+export PGDATA=$ME/var/postgres
 
 PG_CMD='postgres -d2'
 alias pg="$PG_CMD"

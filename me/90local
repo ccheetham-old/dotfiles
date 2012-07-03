@@ -1,4 +1,3 @@
-add_path $ME
-add_path $ME_ARCH
+PATH=$ME_ARCH/bin:$ME/bin:$PATH
 
 # vim: filetype=sh

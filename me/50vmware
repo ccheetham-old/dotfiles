@@ -2,12 +2,12 @@ FUSION=/Applications/VMware\ Fusion.app/Contents/Library
 VMDIRS=(~/Documents/VMs ~/Documents/Virtual\ Machines)
 
 if [[ -d /opt/vmware ]]; then
-  set_envvar VMWARE_TOOLS /opt/vmware
-  add_path $VMWARE_TOOLS
+  export VMWARE_TOOLS=/opt/vmware
+  PATH=$VMWARE_TOOLS/bin:$PATH
 fi
 
 if [[ -d /Applications/OVFTool ]]; then
-  set_envvar OVFTOOL /Applications/OVFTool/ovftool
+  export OVFTOOL=/Applications/OVFTool/ovftool
   alias ovftool=$OVFTOOL
 fi
 

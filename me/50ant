@@ -1,6 +1,6 @@
 if [[ -d $ME_OPT/ant ]]; then
-  set_envvar ANT_HOME $ME_OPT/ant
-  add_path $ANT_HOME
+  export ANT_HOME=$ME_OPT/ant
+  PATH=$ANT_HOME/bin:$PATH
 fi
 
 alias ant='ant -e'

@@ -18,9 +18,9 @@ case $OSTYPE in
     ;;
 esac
 
-set_envvar ME ~
-set_envvar ME_OPT $ME/opt
-set_envvar ME_ARCH ~/$ME_OS-$(uname -m)
-set_envvar ME_ARCH_OPT $ME_ARCH/opt
+export ME=~
+export ME_OPT=$ME/opt
+export ME_ARCH=~/$ME_OS-$(uname -m)
+export ME_ARCH_OPT=$ME_ARCH/opt
 
 # vim: filetype=sh

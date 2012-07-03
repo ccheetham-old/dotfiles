@@ -1,5 +1,5 @@
-set_envvar JAVA_HOME $ME_ARCH_OPT/jdk
-add_path $JAVA_HOME
+export JAVA_HOME=$ME_ARCH_OPT/jdk
+PATH=$JAVA_HOME/bin:$PATH
 
 alias j='java'
 
