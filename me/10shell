@@ -30,6 +30,4 @@ function mcdir()
 
 alias watch='watch -n1'
 
-set_envvar LESS "-RSM~gIsw"
-
 # vim: filetype=sh

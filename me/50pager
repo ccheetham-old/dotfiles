@@ -1,8 +1,4 @@
-if which vimpager > /dev/null; then
-  PAGER=vimpager
-else
-  PAGER=less
-fi
-alias less="$PAGER"
+export PAGER=less
+export LESS "-RSM~gIsw"
 
 # vim: filetype=sh
