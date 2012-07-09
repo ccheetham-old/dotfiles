@@ -1,6 +1,0 @@
-if [[ -d $ME_OPT/groovy ]]; then
-  export GROOVY_HOME=$ME_OPT/groovy
-  PATH=$GROOVY_HOME/bin:$PATH
-fi
-
-# vim: filetype=sh

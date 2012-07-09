@@ -1,6 +1,0 @@
-if [[ -d $ME_OPT/scala ]]; then
-  export SCALA_HOME=$ME_OPT/scala
-  PATH=$SCALA_HOME/bin:$PATH
-fi
-
-# vim: filetype=sh

@@ -1,6 +1,0 @@
-if [[ -d $ME_OPT/grails ]]; then
-  export GRAILS_HOME=$ME_OPT/grails
-  PATH=$GRAILS_HOME/bin:$PATH
-fi
-
-# vim: filetype=sh
