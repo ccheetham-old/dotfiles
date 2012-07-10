@@ -20,7 +20,7 @@ fi
 # find a vmx file based on vmname
 function fvmx()
 {
-  if (( $# != 1 )) then
+  if [[ $# != 1 ]]; then
     echo "$0 hint"
     return
   fi
