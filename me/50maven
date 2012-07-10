@@ -1,28 +1,21 @@
 if [[ -d $ME_OPT/maven ]]; then
   export MAVEN_HOME=$ME_OPT/maven
-  export MAVEN_OPTS=-Xmx1024m
   PATH=$MAVEN_HOME/bin:$PATH
 fi
-
-function _maven()
-{
-  local version=$1
-  shift
-  MAVEN_HOME=$ME_OPT/maven${version}
-  MAVEN_HOME=$MAVEN_HOME $MAVEN_HOME/bin/mvn $*
-}
+[[ -d $ME_OPT/maven2 ]] && MAVEN2_HOME=$ME_OPT/maven2
+[[ -d $ME_OPT/maven3 ]] && MAVEN3_HOME=$ME_OPT/maven3
 
 function m2()
 {
-  _maven 2 $*
+  MAVEN_HOME=$MAVEN2_HOME $MAVEN2_HOME/bin/mvn $*
 }
 
 function m3()
 {
-  _maven 3 $*
+  MAVEN_HOME=$MAVEN3_HOME $MAVEN3_HOME/bin/mvn $*
 }
 
-alias m=m3
+alias m=mvn
 
 
 # vim: filetype=sh

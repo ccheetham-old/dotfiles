@@ -19,7 +19,8 @@ case $OSTYPE in
 esac
 
 export ME=~
-export ME_OPT=$ME/opt
+[[ $ME_OS == cygwin ]] && ME_OPT=/tools || ME_OPT=$ME/opt
+export ME_OPT
 export ME_ARCH=~/$ME_OS-$(uname -m)
 export ME_ARCH_OPT=$ME_ARCH/opt
 
