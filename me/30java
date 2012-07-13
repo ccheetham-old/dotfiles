@@ -1,11 +1,11 @@
-if [[ $ME_OS == cygwin ]]; then
-  JAVA_HOME=/tools/jdk
-else
+if [[ -d $ME_ARCH_OPT/jdk ]]; then
   JAVA_HOME=$ME_ARCH_OPT/jdk
 fi
-export JAVA_HOME
-PATH=$JAVA_HOME/bin:$PATH
-
-alias j='java'
+if [[ -n $JAVA_HOME ]]; then
+  shlog using java at $JAVA_HOME
+  export JAVA_HOME
+  PATH=$JAVA_HOME/bin:$PATH
+  alias j='java'
+fi
 
 # vim: filetype=sh
