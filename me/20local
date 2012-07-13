@@ -1,3 +1,3 @@
-PATH=/usr/local/bin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/sbin:/sbin
 
 # vim: filetype=sh
