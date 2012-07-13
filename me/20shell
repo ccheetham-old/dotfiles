@@ -1,0 +1,52 @@
+alias upalias='. ~/.me/aliases'
+
+alias h='history -fD'
+alias path='echo $PATH'
+
+[[ $TERM == xterm ]] && TERM=xterm-256color
+
+unset ls_opts
+ls_cmd=ls
+if [[ $ME_OS == darwin ]] || [[ $ME_OS == freebsd ]] ; then
+  if which gls > /dev/null 2>&1; then
+    ls_cmd=gls
+  else
+    ls_opts=' -FGH'
+  fi
+fi
+if $ls_cmd --version 2> /dev/null | grep GNU > /dev/null; then
+  for opt in classify color group-directories-first; do
+    if $ls_cmd --$opt > /dev/null 2>&1; then
+      ls_opts+=" --$opt"
+    fi
+  done
+fi
+alias ls="$ls_cmd$ls_opts"
+unset ls_cmd ls_opts
+
+whence -p gdircolors > /dev/null && alias dircolors=gdircolors
+eval $(dircolors ~/.dir_colors 2> /dev/null)
+
+alias ll='ls -l'
+alias lh='ll -h'
+alias la='ls -a'
+alias lla='ls -la'
+alias lf='ls *(.)'
+alias ld='ls -d *(/)'
+
+if which dircolors > /dev/null 2>&1; then
+  if [[ -f ~/.dir_colors ]]; then
+    eval `dircolors ~/.dir_colors`
+  fi
+fi
+
+alias mkdir='mkdir -p'
+function mcdir()
+{
+  mkdir $1
+  chdir $1
+}
+
+alias watch='watch -n1'
+
+# vim: filetype=sh

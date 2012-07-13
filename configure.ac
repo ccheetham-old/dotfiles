@@ -10,6 +10,7 @@ AC_OUTPUT([
 Makefile
 bash/Makefile
 bin/Makefile
+coreutils/Makefile
 git/Makefile
 me/Makefile
 proc/Makefile
