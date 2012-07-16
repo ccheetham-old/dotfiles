@@ -1,4 +1,5 @@
 # -*- sh -*-
+echo PATH $PATH
 
 HISTFILE=~/.zhistfile
 HISTSIZE=1000

@@ -7,4 +7,13 @@ for d in \
   fi
 done
 
+for d in \
+  /usr/sbin \
+  /sbin \
+; do
+  if ! is_in_path $d; then
+    append_path $d
+  fi
+done
+
 # vim: filetype=zsh

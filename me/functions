@@ -12,10 +12,16 @@ is_in_path() {
   fi
 }
 
+append_path() {
+  local dir=$1
+  shlog appending $dir to path
+  path+=$dir
+}
+
+
 prepend_path() {
   local dir=$1
   shlog prepending $dir to path
   path=($dir $path)
 }
-
 # vim: filetype=sh
