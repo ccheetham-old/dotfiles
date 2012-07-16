@@ -1,0 +1,23 @@
+get rid of opt vars
+
+replace ultisnips
+
+judicial sbin paths
+
+vimrc xterm-256
+
+pop/push helpers
+
+zsh filetype
+
+group env setup in logical groups, e.g.: java, java.ant, java.maven
+
+just use ~/lib/python
+
+simplify brew alias
+
+remove emacs
+
+fix gcc ordering
+
+rabbitmq vim hint
