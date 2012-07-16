@@ -1,3 +1,4 @@
-PATH=$ME_ARCH/bin:$ME/bin:$PATH
+prepend_path $ME_ARCH/bin
+prepend_path $ME/bin
 
 # vim: filetype=sh

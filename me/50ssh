@@ -5,8 +5,7 @@ if which keychain > /dev/null 2>&1; then
   [[ -f $KEYCHAIN_ENV ]] && source $KEYCHAIN_ENV
 fi
 
-function instkey()
-{
+instkey() {
   if [[ $# != 1 ]]; then
     echo "Usage: $0 <host>"
     return

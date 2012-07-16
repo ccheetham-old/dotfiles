@@ -1,7 +1,11 @@
 alias upalias='. ~/.me/aliases'
 
 alias h='history -fD'
-alias path='echo $PATH'
+path() {
+  for d in $path; do
+    echo $d;
+  done
+}
 
 [[ $TERM == xterm ]] && TERM=xterm-256color
 

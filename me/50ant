@@ -1,6 +1,6 @@
 if [[ -d $ME_OPT/ant ]]; then
   export ANT_HOME=$ME_OPT/ant
-  PATH=$ANT_HOME/bin:$PATH
+  is_in_path $ANT_HOME/bin || prepend_path $ANT_HOME/bin
 fi
 
 alias ant='ant -e'

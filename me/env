@@ -1,5 +1,3 @@
-#SHLOG=1
-
 case $OSTYPE in
   cygwin*)
     ME_OS=cygwin

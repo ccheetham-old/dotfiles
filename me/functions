@@ -1,7 +1,21 @@
-function shlog()
-{
+shlog() {
   [[ -z $SHLOG ]] && return
   printf "--- $*\n"
+}
+
+is_in_path() {
+  local dir=$1
+  if (( ${path[(i)$dir]} > ${#path} )); then
+    return 1
+  else
+    return 0
+  fi
+}
+
+prepend_path() {
+  local dir=$1
+  shlog prepending $dir to path
+  path=($dir $path)
 }
 
 # vim: filetype=sh

@@ -3,7 +3,7 @@ VMDIRS=(~/Documents/VMs ~/Documents/Virtual\ Machines)
 
 if [[ -d /opt/vmware ]]; then
   export VMWARE_TOOLS=/opt/vmware
-  PATH=$VMWARE_TOOLS/bin:$PATH
+  is_in_path $VMWARE_TOOLS/bin || prepend_path $VMWARE_TOOLS/bin
 fi
 
 if [[ -d /Applications/OVFTool ]]; then
@@ -18,8 +18,7 @@ else
 fi
 
 # find a vmx file based on vmname
-function fvmx()
-{
+fvmx() {
   if [[ $# != 1 ]]; then
     echo "$0 hint"
     return

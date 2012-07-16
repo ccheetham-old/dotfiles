@@ -3,9 +3,7 @@
 #
 
 [[ $ME_OS == solaris ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
-#alias toor='$ROOTEXEC su -'
-function toor()
-{
+toor() {
   if [[ $# == 0 ]]; then
     $ROOTEXEC su -
   else

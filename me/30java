@@ -1,10 +1,8 @@
-if [[ -d $ME_ARCH_OPT/jdk ]]; then
-  JAVA_HOME=$ME_ARCH_OPT/jdk
-fi
+[[ -d $ME_ARCH_OPT/jdk ]] && JAVA_HOME=$ME_ARCH_OPT/jdk
 if [[ -n $JAVA_HOME ]]; then
   shlog using java at $JAVA_HOME
   export JAVA_HOME
-  PATH=$JAVA_HOME/bin:$PATH
+  is_in_path $JAVA_HOME/bin || prepend_path $JAVA_HOME/bin
   alias j='java'
 fi
 

@@ -1,7 +1,6 @@
 alias s='svn'
 alias s\?='svn status'
-function sd
-{
+sd() {
   s diff --diff-cmd colordiff $* | less
   #svn diff $* | less
 }

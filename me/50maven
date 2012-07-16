@@ -1,21 +1,18 @@
 if [[ -d $ME_OPT/maven ]]; then
   export MAVEN_HOME=$ME_OPT/maven
-  PATH=$MAVEN_HOME/bin:$PATH
+  is_in_path $MAVEN_HOME/bin || prepend_path $MAVEN_HOME/bin
 fi
 [[ -d $ME_OPT/maven2 ]] && MAVEN2_HOME=$ME_OPT/maven2
 [[ -d $ME_OPT/maven3 ]] && MAVEN3_HOME=$ME_OPT/maven3
 
-function m2()
-{
+m2() {
   MAVEN_HOME=$MAVEN2_HOME $MAVEN2_HOME/bin/mvn $*
 }
 
-function m3()
-{
+m3() {
   MAVEN_HOME=$MAVEN3_HOME $MAVEN3_HOME/bin/mvn $*
 }
 
 alias m=mvn
-
 
 # vim: filetype=sh

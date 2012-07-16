@@ -3,8 +3,7 @@ export SERVICES="mongodb mysql postgresql rabbitmq redis"
 # common test commands
 alias bec='bundle exec cucumber'
 
-function issue()
-{
+issue() {
   local gid=$1
   local id
   local url
@@ -37,8 +36,7 @@ export VCAP_BVT_TARGET=foo1.cloudfoundry.me
 
 # vmc helpers
 
-function deploy()
-{
+deploy() {
   local app=$1
   shift
 
@@ -48,8 +46,7 @@ function deploy()
   done
 }
 
-function undeploy()
-{
+undeploy() {
   local app=$1
 
   for service in $(echo $SERVICES); do

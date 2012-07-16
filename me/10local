@@ -1,3 +1,10 @@
-PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/sbin:/sbin
+for d in \
+  /usr/local/sbin \
+  /usr/local/bin \
+; do
+  if ! is_in_path $d; then
+    prepend_path $d
+  fi
+done
 
-# vim: filetype=sh
+# vim: filetype=zsh

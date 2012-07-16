@@ -1,4 +1,4 @@
 export GEM_HOME=$HOME/lib/gems
-PATH=$GEM_HOME/bin:$PATH
+is_in_path $GEM_HOME/bin || prepend_path $GEM_HOME/bin
 
 # vim: filetype=sh
