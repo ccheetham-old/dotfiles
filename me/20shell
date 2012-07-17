@@ -18,13 +18,11 @@ if [[ $ME_OS == darwin ]] || [[ $ME_OS == freebsd ]] ; then
     ls_opts=' -FGH'
   fi
 fi
-if $ls_cmd --version 2> /dev/null | grep GNU > /dev/null; then
-  for opt in classify color group-directories-first; do
-    if $ls_cmd --$opt > /dev/null 2>&1; then
-      ls_opts+=" --$opt"
-    fi
-  done
-fi
+for opt in classify color group-directories-first; do
+  if $ls_cmd --$opt > /dev/null 2>&1; then
+    ls_opts+=" --$opt"
+  fi
+done
 alias ls="$ls_cmd$ls_opts"
 unset ls_cmd ls_opts
 
