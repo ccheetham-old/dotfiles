@@ -4,6 +4,7 @@
 
 [[ $ME_OS == solaris ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
 toor() {
+  unset DISPLAY
   if [[ $# == 0 ]]; then
     $ROOTEXEC su -
   else
