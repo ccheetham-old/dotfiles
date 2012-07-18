@@ -4,12 +4,14 @@
 
 [[ $ME_OS == solaris ]] && ROOTEXEC='pfexec' || ROOTEXEC='sudo'
 toor() {
+  local save=$DISPLAY
   unset DISPLAY
   if [[ $# == 0 ]]; then
     $ROOTEXEC su -
   else
     $ROOTEXEC $*
   fi
+  DISPLAY=$save
 }
 
 
