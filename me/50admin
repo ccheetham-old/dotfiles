@@ -11,7 +11,7 @@ toor() {
   else
     $ROOTEXEC $*
   fi
-  DISPLAY=$save
+  export DISPLAY=$save
 }
 
 
