@@ -1,7 +1,8 @@
 if which vim > /dev/null; then
-  EDITOR=vim
-  VISUAL='vim -f'
-  alias vi='vim'
+  VIM=`which vim`
+  alias vi=$VIM
+  EDITOR=$VIM
+  VISUAL="$VIM -f"
 fi
 
 # vim: filetype=sh
