@@ -1,0 +1,5 @@
+if [[ -d $ME_OPT/javacc ]]; then
+  export JAVACC_HOME=$ME_OPT/javacc
+fi
+
+# vim: filetype=sh
