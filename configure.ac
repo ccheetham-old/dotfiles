@@ -15,6 +15,7 @@ git/Makefile
 me/Makefile
 proc/Makefile
 ruby/Makefile
+task/Makefile
 vim/Makefile
 vim/after/Makefile
 vim/after/ftplugin/Makefile

@@ -1,0 +1,4 @@
+data.location=~/.task
+include ~/share/task/rc/solarized-dark-256.theme
+include ~/share/task/rc/holidays.en-US.rc
+calendar.holidays=sparse
