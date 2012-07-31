@@ -1,4 +1,4 @@
-files = java.vim python.vim ruby.vim
+files = java.vim javacc.vim python.vim ruby.vim
 
 install-data-hook:
 	$(install_sh) -d $(prefix)/.$(subdir); \
