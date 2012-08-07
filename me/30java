@@ -3,7 +3,14 @@ if [[ -n $JAVA_HOME ]]; then
   shlog using java at $JAVA_HOME
   export JAVA_HOME
   is_in_path $JAVA_HOME/bin || prepend_path $JAVA_HOME/bin
-  alias j='java'
 fi
+
+j () {
+  java -Djava.util.logging.config.file=$HOME/etc/logging.properties $*
+}
+
+jd () {
+  java -Djava.util.logging.config.file=$HOME/etc/debug-logging.properties $*
+}
 
 # vim: filetype=sh
