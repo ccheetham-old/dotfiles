@@ -1,4 +1,4 @@
-AC_INIT([dotfiles], [0.0.3])
+AC_INIT([dotfiles], [0.0.4])
 
 AC_PREFIX_DEFAULT(${HOME})
 
@@ -12,7 +12,7 @@ bash/Makefile
 bin/Makefile
 coreutils/Makefile
 git/Makefile
-me/Makefile
+mail/Makefile
 proc/Makefile
 ruby/Makefile
 task/Makefile

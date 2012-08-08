@@ -1,0 +1,50 @@
+DEFAULT=$HOME/var/mail
+MAILDIR=$HOME/var/mail
+LOCKFILE=$HOME/var/run/procmail.lock
+LOGFILE=$HOME/var/log/procmail.log
+LOGABSTRACT=no
+VERBOSE=on
+NL="
+"
+
+###############################################################
+#catch duplicates using formail
+#--------------------------------------------------------------
+:0 Whc: .msgid.lock
+| formail -D 16384 .msgid.cache
+:0 a
+duplicates
+
+
+###############################################################
+# vmware's quarantine system
+#--------------------------------------------------------------
+:0
+* ^From:.*<quarantine@vmware.com>
+quarantine
+
+
+###############################################################
+# vmware's socialcast site
+#--------------------------------------------------------------
+:0
+* ^Sender: do-not-reply@socialcast.com
+socialcast
+
+
+###############################################################
+# mailing lists
+#--------------------------------------------------------------
+:0
+* ^List-Id:.*<s2-rmacblane-all.mailman2.vmware.com>
+rmacblane-all
+
+
+###############################################################
+# catchall
+#--------------------------------------------------------------
+:0
+* .*
+inbox
+
+# vim: filetype=procmail

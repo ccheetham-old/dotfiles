@@ -1,0 +1,13 @@
+alias me                    Chris Cheetham <chris@cheetham.com>
+alias mework                Chris Cheetham <ccheetham@vmware.com>
+
+alias carmen                Carmen Alupului <calupului@vmware.com>
+alias frank                 Frank Liva <fliva@vmware.com>
+
+alias fliva-all             fliva-all <s2-fliva-all>
+alias rmacblane-all         rmacblane-all <s2-rmacblane-all>
+
+alias jerry                 Jerry Kuch <jerryk@rbcon.com>
+alias simon                 Simon MacMullen <simon@rabbitmq.com>
+
+# vim: filetype=muttrc

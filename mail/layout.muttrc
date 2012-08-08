@@ -1,0 +1,4 @@
+set sort=threads
+set pager_index_lines=6
+
+# vim: filetype=muttrc
