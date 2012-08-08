@@ -1,6 +1,5 @@
 shlog() {
-  [[ -z $SHLOG ]] && return
-  printf "--- $*\n"
+  printf "--- $*\n" >> $SHELL_LOG
 }
 
 is_in_path() {

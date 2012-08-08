@@ -1,8 +1,9 @@
 export BASEDIR=$(dirname $0)
 
-source $BASEDIR/functions
 source $BASEDIR/env
+source $BASEDIR/functions
 [[ -f $BASEDIR/override ]] && source $BASEDIR/override
+rm $SHELL_LOG
 
 for f in $BASEDIR/[[:digit:]]*; do
   shlog sourcing $f
