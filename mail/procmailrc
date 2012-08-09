@@ -144,6 +144,9 @@ list-r&d
 * ^To:.*<vmware-employees@vmware.com>
 list-employees
 :0
+* ^To:.*<all@vmware.com>
+list-all
+:0
 * ^List-Id:.*<s2qa.mailman2.vmware.com>
 list-springsource-qa
 
