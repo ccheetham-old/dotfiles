@@ -1,4 +1,10 @@
-lists rd-all-adl.mailmaster.eng.vmware.com rd-fte-adl@vmware.com rd-us-fte-adl.mailmaster.eng.vmware.com s2-rmacblane-all@vmware.com s2qa.mailman2.vmware.com
-subscribe rd-all-adl.mailmaster.eng.vmware.com mrd-fte-adl@vmware.com rd-us-fte-adl.mailmaster.eng.vmware.com s2-rmacblane-all@vmware.com s2qa.mailman2.vmware.com
+subscribe \
+  all@vmware.com \
+  cftest@vmware.com\
+  mrd-fte-adl@vmware.com \
+  s2-fliva-all@vmware.com \
+  s2-nashua@vmware.com \
+  s2-pce-all@vmware.com \
+  s2-rmacblane-all@vmware.com
 
 # vim: filetype=muttrc
