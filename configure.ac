@@ -13,6 +13,7 @@ bin/Makefile
 coreutils/Makefile
 git/Makefile
 mail/Makefile
+me/Makefile
 proc/Makefile
 ruby/Makefile
 task/Makefile
