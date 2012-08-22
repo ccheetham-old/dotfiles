@@ -1,15 +1,19 @@
 alias mutt='mutt -d2'
 
 typeset -a mailpath
-for mb in $ME/var/mail/*(.); do
-  mailpath[$#mailpath+1]="${mb}?<<< new mail: ${mb:t} >>>"
-done
+if [[ -d $ME/var/mail ]]; then
+  for mb in $ME/var/mail/*(.); do
+    mailpath[$#mailpath+1]="${mb}?<<< new mail: ${mb:t} >>>"
+  done
+fi
 
-if [ -f $ME/var/run/fetchmail.pid ]; then
-  shlog fetchmail already running
-else
-  shlog starting fetchmail
-  fetchmail
+if which fetchmail > /dev/null 2>&1; then
+  if [ -f $ME/var/run/fetchmail.pid ]; then
+    shlog fetchmail already running
+  else
+    shlog starting fetchmail
+    fetchmail
+  fi
 fi
 
 # vim: filetype=sh

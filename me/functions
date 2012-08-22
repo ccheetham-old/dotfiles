@@ -1,4 +1,6 @@
 shlog() {
+  local logdir=$(dirname $SHELL_LOG)
+  [[ -d $logdir ]] || mkdir -p $logdir
   printf "--- $*\n" >> $SHELL_LOG
 }
 
