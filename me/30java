@@ -2,7 +2,7 @@
 if [[ -n $JAVA_HOME ]]; then
   shlog using java at $JAVA_HOME
   export JAVA_HOME
-  is_in_path $JAVA_HOME/bin || prepend_path $JAVA_HOME/bin
+  prepend_path $JAVA_HOME/bin
 fi
 
 j () {

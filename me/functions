@@ -15,6 +15,7 @@ is_in_path() {
 
 append_path() {
   local dir=$1
+  remove_path $dir
   shlog appending $dir to path
   path+=$dir
 }
@@ -22,7 +23,15 @@ append_path() {
 
 prepend_path() {
   local dir=$1
+  remove_path $dir
   shlog prepending $dir to path
   path=($dir $path)
 }
+
+remove_path() {
+  local dir=$1
+  shlog removing $dir from path
+  path=("${(@)path:#${dir}}")
+}
+
 # vim: filetype=sh

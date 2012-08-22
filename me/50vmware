@@ -3,7 +3,7 @@ VMDIRS=(~/Documents/VMs ~/Documents/Virtual\ Machines)
 
 if [[ -d /opt/vmware ]]; then
   export VMWARE_TOOLS=/opt/vmware
-  is_in_path $VMWARE_TOOLS/bin || prepend_path $VMWARE_TOOLS/bin
+  prepend_path $VMWARE_TOOLS/bin
 fi
 
 if [[ -d /Applications/OVFTool ]]; then

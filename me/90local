@@ -2,7 +2,7 @@ for d in \
   $ME_ARCH/bin \
   $ME/bin \
 ; do
-  is_in_path $d || prepend_path $d
+  prepend_path $d
 done
 
 # vim: filetype=sh

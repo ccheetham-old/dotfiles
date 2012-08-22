@@ -1,6 +1,6 @@
 if [[ -d $ME_OPT/maven ]]; then
   export MAVEN_HOME=$ME_OPT/maven
-  is_in_path $MAVEN_HOME/bin || prepend_path $MAVEN_HOME/bin
+  prepend_path $MAVEN_HOME/bin
 fi
 [[ -d $ME_OPT/maven2 ]] && MAVEN2_HOME=$ME_OPT/maven2
 [[ -d $ME_OPT/maven3 ]] && MAVEN3_HOME=$ME_OPT/maven3

@@ -2,9 +2,7 @@ for d in \
   /usr/local/sbin \
   /usr/local/bin \
 ; do
-  if ! is_in_path $d; then
-    prepend_path $d
-  fi
+  prepend_path $d
 done
 
 for d in \
