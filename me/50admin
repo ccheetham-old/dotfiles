@@ -30,7 +30,10 @@ case $ME_OS in
 esac
 alias systail='$ROOTEXEC tail -f $SYSLOG'
 
-alias space='df -h | grep disk'
+space() {
+  df -h | head -1
+  df -h | grep disk
+}
 
 alias reboot='$ROOTEXEC reboot'
 alias poweroff='$ROOTEXEC poweroff'
