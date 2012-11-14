@@ -7,6 +7,9 @@ path() {
   done
 }
 
+alias p+=pushd
+alias p-=popd
+
 [[ $TERM == xterm ]] && TERM=xterm-256color
 
 unset ls_opts
