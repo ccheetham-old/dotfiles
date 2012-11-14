@@ -22,8 +22,10 @@ nmap <leader>n :set invnumber<cr>
 nmap <leader>rn :set relativenumber<cr>
 set ruler
 set numberwidth=3
+
+" line/col highlighting
 set colorcolumn=80
-set nowrap
+nnoremap <leader>c :set cursorline! cursorcolumn! <cr>
 
 " searching
 set incsearch
