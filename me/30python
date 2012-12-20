@@ -10,6 +10,24 @@ export PYTHONPATH
 alias py='python'
 alias pypath='echo $PYTHONPATH'
 
+pyhttpd ()
+{
+  unset pre_cmd py_cmd http_mod
+  if which python3 > /dev/null 2>&1; then
+    py_cmd="python3"
+    http_mod="http.server"
+  else
+    py_cmd="python"
+    http_mod="SimpleHTTPServer"
+  fi
+  if [[ -z $1 ]]; then
+    $pre_cmd $py_cmd -m $http_mod
+  else
+    (cd $1 && $pre_cmd $py_cmd -m $http_mod)
+  fi
+  unset pre_cmd py_cmd http_mod
+}
+
 #
 # notes:
 #
