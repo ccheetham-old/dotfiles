@@ -11,6 +11,9 @@ alias p+=pushd
 alias p-=popd
 
 [[ $TERM == xterm ]] && TERM=xterm-256color
+if [[ $TERM == xterm-256color ]] && [[ $ME_OS == solaris ]]; then
+  TERM=xterm-color
+fi
 
 unset ls_opts
 ls_cmd=ls
