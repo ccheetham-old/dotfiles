@@ -1,4 +1,4 @@
-export GEM_HOME=$HOME/lib/gems
+export GEM_HOME=$ME_ARCH/lib/gems
 prepend_path $GEM_HOME/bin
 
 # vim: filetype=sh
