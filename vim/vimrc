@@ -144,8 +144,8 @@ set runtimepath+=~/.vim/repo/UltiSnips
 "" syntax enable
 if has('gui_running')
   set background=light
+  colorscheme Tomorrow
 else
   set background=dark
+  colorscheme Tomorrow-Night
 endif
-let g:solarized_termcolors=256
-colorscheme solarized
