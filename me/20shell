@@ -10,9 +10,12 @@ path() {
 alias p+=pushd
 alias p-=popd
 
-[[ $TERM == xterm ]] && TERM=xterm-256color
-if [[ $TERM == xterm-256color ]] && [[ $ME_OS == solaris ]]; then
-  TERM=xterm-color
+if [[ $TERM == xterm* ]]; then
+  if [[ $ME_OS == solaris ]]; then
+    TERM=xterm
+  else
+    TERM=xterm-256color
+  fi
 fi
 
 unset ls_opts
@@ -23,6 +26,9 @@ if [[ $ME_OS == darwin ]] || [[ $ME_OS == freebsd ]] ; then
   else
     ls_opts=' -FGH'
   fi
+fi
+if [[ $ME_OS == solaris ]]; then
+  ls_opts=' -FH'
 fi
 for opt in classify color group-directories-first; do
   if $ls_cmd --$opt > /dev/null 2>&1; then
