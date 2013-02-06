@@ -1,4 +1,6 @@
-export PAGER=less
-export LESS="-RSM~gIsw"
+if which less > /dev/null 2>&1; then
+  export PAGER=less
+  export LESS="-RSM~gIsw"
+fi
 
 # vim: filetype=sh
