@@ -1,77 +1,25 @@
 #!/usr/bin/env bash
 
-BASEDIR=$(pwd)
+VIM_DIR=$(pwd)
+REPO_DIR=../../.repos
 
-AUTOLOADS=autoload
-BUNDLES=bundle
-REPOS=repo
+MKDIR='/bin/mkdir -p'
+LN='/bin/ln -s'
+RM='/bin/rm -f'
+RMDIR='/bin/rm -rf'
 
-PATHOGEN=pathogen.vim
-PATHOGEN_URL=https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/$PATHOGEN
-SOLARIZED=vim-colors-solarized
-SOLARIZED_GIT=https://github.com/altercation/$SOLARIZED.git
-NERDTREE=nerdtree
-NERDTREE_GIT=https://github.com/scrooloose/$NERDTREE.git
-ULTISNIPS=UltiSnips
-ULTISNIPS_GIT=https://github.com/vim-scripts/$ULTISNIPS.git
-
-MKDIR='mkdir -p'
-RM='rm -f'
-LN='ln -s'
-CLONE='git clone'
-UPDATE='git pull'
-CURL='curl'
-RAKE='rake'
-
-function setup_pathogen()
+function link_files()
 {
-  if [[ -f $AUTOLOADS/$PATHOGEN ]]; then
-    echo updating pathogen
-  else
-    echo installing pathogen
-  fi
-  $MKDIR $AUTOLOADS
-  $CURL -o $AUTOLOADS/$PATHOGEN $PATHOGEN_URL
+  cd $VIM_DIR
+  srcdir=$1
+  tgtdir=$2
+  $RMDIR $tgtdir
+  $MKDIR $tgtdir
+  cd $tgtdir
+  for f in $srcdir/*; do
+    $LN $f
+  done
 }
 
-function setup_solarized()
-{
-  if [[ -d $REPOS/$SOLARIZED ]]; then
-    echo updating solarized repo
-    cd $REPOS/$SOLARIZED && $UPDATE && cd -
-  else
-    echo cloning solarized repo
-    $CLONE $SOLARIZED_GIT $REPOS/$SOLARIZED
-  fi
-  $RM $BUNDLES/$SOLARIZED
-  $LN ../$REPOS/$SOLARIZED $BUNDLES/$SOLARIZED
-}
-
-function setup_nerdtree()
-{
-  if [[ -d $REPOS/$NERDTREE ]]; then
-    echo updating nerdtree repo
-    cd $REPOS/$NERDTREE && $UPDATE && cd -
-  else
-    echo cloning nerdtree repo
-    $CLONE $NERDTREE_GIT $REPOS/$NERDTREE
-  fi
-  $RM $BUNDLES/$NERDTREE
-  $LN ../$REPOS/$NERDTREE $BUNDLES/$NERDTREE
-}
-
-function setup_ultisnips()
-{
-  if [[ -d $REPOS/$ULTISNIPS ]]; then
-    echo updating nerdtree repo
-    cd $REPOS/$ULTISNIPS && $UPDATE && cd -
-  else
-    echo cloning nerdtree repo
-    $CLONE $ULTISNIPS_GIT $REPOS/$ULTISNIPS
-  fi
-}
-
-setup_pathogen
-setup_solarized
-setup_nerdtree
-setup_ultisnips
+link_files $REPO_DIR/vim-pathogen/autoload autoload
+link_files $REPO_DIR/tomorrow-theme/vim/colors colors
