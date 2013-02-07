@@ -80,6 +80,7 @@ nmap <leader>w :set invwrap<cr>
 
 " NERDTree
 map <leader>t :NERDTreeToggle<cr>
+autocmd vimenter * if !argc() | NERDTree | endif
 
 " UltiSnips
 set runtimepath+=~/.vim/repo/UltiSnips

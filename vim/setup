@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VIM_DIR=$(pwd)
+VIM_DIR=$(dirname $0)
 REPO_DIR=../../.repos
 
 MKDIR='/bin/mkdir -p'
@@ -10,10 +10,9 @@ RMDIR='/bin/rm -rf'
 
 function link_files()
 {
-  cd $VIM_DIR
   srcdir=$1
   tgtdir=$2
-  $RMDIR $tgtdir
+  cd $VIM_DIR
   $MKDIR $tgtdir
   cd $tgtdir
   for f in $srcdir/*; do
@@ -21,5 +20,17 @@ function link_files()
   done
 }
 
+function link_dir()
+{
+  srcdir=$1
+  tgtdir=$2
+  cd $VIM_DIR
+  $MKDIR $tgtdir
+  cd $tgtdir
+  $LN $srcdir
+}
+
+$RMDIR autoload colors bundle
 link_files $REPO_DIR/vim-pathogen/autoload autoload
 link_files $REPO_DIR/tomorrow-theme/vim/colors colors
+link_dir $REPO_DIR/nerdtree bundle
