@@ -63,6 +63,7 @@ set viminfo='20,\"500           " Keep a .viminfo file.
 set bs=2                        " backspacing over everything in insert mode
 set visualbell                  " quiet please
 set history=50                  " 50 lines of command history
+set laststatus=2                " always display status line
 
 " edit/source vimrc
 nmap <silent> <leader>ev :edit $MYVIMRC<cr>
